@@ -1,7 +1,7 @@
 # Book Borrowing System
 
 ## Overview
-The **Library Book Borrowing System** is a desktop-based application using **Visual Basic** and **MS Access**. This system is designed to assist librarians in managing book borrowing, returning, and tracking available books efficiently.
+The **Book Borrowing System** is a desktop-based application using **Visual Basic** and **MS Access**. This system is designed to assist librarians in managing book borrowing, returning, and tracking available books efficiently.
 
 ## Features
 - **Borrowing System**: Record book borrow transactions and due dates.
