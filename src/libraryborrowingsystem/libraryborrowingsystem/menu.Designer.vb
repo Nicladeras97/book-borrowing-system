@@ -194,7 +194,7 @@ Partial Class Menu
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.image
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Group
         Me.PictureBox1.InitialImage = Nothing
         Me.PictureBox1.Location = New System.Drawing.Point(22, 15)
         Me.PictureBox1.Name = "PictureBox1"
