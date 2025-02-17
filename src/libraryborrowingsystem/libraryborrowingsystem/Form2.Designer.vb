@@ -24,10 +24,7 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -46,11 +43,13 @@ Partial Class Form2
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -58,33 +57,19 @@ Partial Class Form2
         Me.Panel6.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.LightGray
+        Me.Panel1.BackColor = System.Drawing.Color.LightBlue
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(981, 62)
+        Me.Panel1.Size = New System.Drawing.Size(975, 62)
         Me.Panel1.TabIndex = 2
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(932, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(25, 25)
-        Me.Button2.TabIndex = 5
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -96,35 +81,11 @@ Partial Class Form2
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Book Borrowing System"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(22, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(106, 120)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(768, 34)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "TITLE"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(179, 9)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(210, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(266, 20)
         Me.TextBox1.TabIndex = 5
         '
         'Label4
@@ -142,9 +103,9 @@ Partial Class Form2
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(106, 208)
+        Me.Panel2.Location = New System.Drawing.Point(106, 176)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(405, 38)
+        Me.Panel2.Size = New System.Drawing.Size(462, 38)
         Me.Panel2.TabIndex = 9
         '
         'Panel3
@@ -152,16 +113,16 @@ Partial Class Form2
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.TextBox2)
         Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Location = New System.Drawing.Point(106, 252)
+        Me.Panel3.Location = New System.Drawing.Point(106, 228)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(405, 38)
+        Me.Panel3.Size = New System.Drawing.Size(462, 38)
         Me.Panel3.TabIndex = 10
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(179, 9)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(210, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(266, 20)
         Me.TextBox2.TabIndex = 5
         '
         'Label3
@@ -179,16 +140,16 @@ Partial Class Form2
         Me.Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Panel4.Controls.Add(Me.TextBox3)
         Me.Panel4.Controls.Add(Me.Label5)
-        Me.Panel4.Location = New System.Drawing.Point(106, 296)
+        Me.Panel4.Location = New System.Drawing.Point(106, 277)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(405, 38)
+        Me.Panel4.Size = New System.Drawing.Size(462, 38)
         Me.Panel4.TabIndex = 11
         '
         'TextBox3
         '
         Me.TextBox3.Location = New System.Drawing.Point(179, 9)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(210, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(266, 20)
         Me.TextBox3.TabIndex = 5
         '
         'Label5
@@ -206,9 +167,9 @@ Partial Class Form2
         Me.Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Panel5.Controls.Add(Me.DateTimePicker2)
         Me.Panel5.Controls.Add(Me.Label6)
-        Me.Panel5.Location = New System.Drawing.Point(106, 428)
+        Me.Panel5.Location = New System.Drawing.Point(106, 425)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(405, 38)
+        Me.Panel5.Size = New System.Drawing.Size(462, 38)
         Me.Panel5.TabIndex = 14
         '
         'DateTimePicker2
@@ -217,7 +178,7 @@ Partial Class Form2
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(179, 9)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(210, 20)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(266, 20)
         Me.DateTimePicker2.TabIndex = 8
         Me.DateTimePicker2.Value = New Date(2025, 2, 20, 0, 0, 0, 0)
         '
@@ -236,9 +197,9 @@ Partial Class Form2
         Me.Panel6.BackColor = System.Drawing.Color.Transparent
         Me.Panel6.Controls.Add(Me.DateTimePicker1)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Location = New System.Drawing.Point(106, 384)
+        Me.Panel6.Location = New System.Drawing.Point(106, 376)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(405, 38)
+        Me.Panel6.Size = New System.Drawing.Size(462, 38)
         Me.Panel6.TabIndex = 13
         '
         'DateTimePicker1
@@ -247,7 +208,7 @@ Partial Class Form2
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(179, 8)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(210, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(266, 20)
         Me.DateTimePicker1.TabIndex = 7
         Me.DateTimePicker1.Value = New Date(2025, 2, 20, 0, 0, 0, 0)
         '
@@ -266,16 +227,16 @@ Partial Class Form2
         Me.Panel7.BackColor = System.Drawing.Color.Transparent
         Me.Panel7.Controls.Add(Me.TextBox6)
         Me.Panel7.Controls.Add(Me.Label8)
-        Me.Panel7.Location = New System.Drawing.Point(106, 340)
+        Me.Panel7.Location = New System.Drawing.Point(106, 327)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(405, 38)
+        Me.Panel7.Size = New System.Drawing.Size(462, 38)
         Me.Panel7.TabIndex = 12
         '
         'TextBox6
         '
         Me.TextBox6.Location = New System.Drawing.Point(179, 9)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(210, 20)
+        Me.TextBox6.Size = New System.Drawing.Size(266, 20)
         Me.TextBox6.TabIndex = 5
         '
         'Label8
@@ -288,34 +249,78 @@ Partial Class Form2
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Contact Number"
         '
-        'Button3
-        '
-        Me.Button3.Image = Global.WindowsApplication1.My.Resources.Resources.image
-        Me.Button3.Location = New System.Drawing.Point(69, 122)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(30, 30)
-        Me.Button3.TabIndex = 15
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(637, 437)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(182, 29)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "BORROW"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.image
-        Me.PictureBox2.Location = New System.Drawing.Point(576, 207)
+        Me.PictureBox2.Location = New System.Drawing.Point(615, 176)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(298, 205)
+        Me.PictureBox2.Size = New System.Drawing.Size(255, 236)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox2.TabIndex = 17
         Me.PictureBox2.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.Vector__4_
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button3.Location = New System.Drawing.Point(840, 122)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(30, 30)
+        Me.Button3.TabIndex = 15
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.Vector__2_
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(932, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(25, 25)
+        Me.Button2.TabIndex = 5
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(22, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(96, 97)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(246, 55)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Book Title"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.Black
+        Me.Button4.Location = New System.Drawing.Point(669, 428)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(145, 36)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "BORROW"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Form2
         '
@@ -323,8 +328,9 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(975, 560)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -332,13 +338,11 @@ Partial Class Form2
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form2"
         Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -352,14 +356,15 @@ Partial Class Form2
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
@@ -379,6 +384,7 @@ Partial Class Form2
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button4 As Button
 End Class
