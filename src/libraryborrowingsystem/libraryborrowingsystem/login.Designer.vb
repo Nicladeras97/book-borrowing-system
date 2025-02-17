@@ -28,13 +28,13 @@ Partial Class Login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -58,9 +58,9 @@ Partial Class Login
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(111, 317)
+        Me.Button1.Location = New System.Drawing.Point(99, 317)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(122, 36)
+        Me.Button1.Size = New System.Drawing.Size(145, 36)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "LOG IN"
         Me.Button1.UseVisualStyleBackColor = False
@@ -89,7 +89,7 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(45, 104)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(249, 37)
@@ -105,6 +105,17 @@ Partial Class Login
         Me.TextBox1.Size = New System.Drawing.Size(232, 26)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.Text = " Username"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Vector
+        Me.PictureBox1.Location = New System.Drawing.Point(144, 40)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 54)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Label3
         '
@@ -141,17 +152,6 @@ Partial Class Login
         Me.PictureBox2.TabIndex = 2
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Vector
-        Me.PictureBox1.Location = New System.Drawing.Point(144, 40)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 54)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -167,8 +167,8 @@ Partial Class Login
         Me.Text = "Book Borrowing System"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
