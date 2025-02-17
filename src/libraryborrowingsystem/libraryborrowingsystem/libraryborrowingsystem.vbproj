@@ -154,6 +154,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.png" />
+    <None Include="Vector %284%29.png" />
+    <None Include="search.png" />
+    <None Include="Vector %282%29.png" />
+    <None Include="Vector %281%29.png" />
+    <None Include="Group.png" />
+    <None Include="Group1.png" />
+    <None Include="Group 45.png" />
+    <None Include="Group 43.png" />
     <None Include="Vector.png" />
     <None Include="image.png" />
   </ItemGroup>
