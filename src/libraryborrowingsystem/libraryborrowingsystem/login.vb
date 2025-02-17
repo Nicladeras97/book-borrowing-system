@@ -12,11 +12,17 @@ Public Class Login
         path.CloseFigure()
 
         Panel1.Region = New Region(path)
+
+
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim menu As New menu()
+        Dim menu As New Menu()
         menu.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
     End Sub
 End Class
 
