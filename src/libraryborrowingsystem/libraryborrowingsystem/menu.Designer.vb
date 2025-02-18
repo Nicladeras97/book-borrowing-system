@@ -48,7 +48,7 @@ Partial Class Menu
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel1.BackColor = System.Drawing.Color.LightGray
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -61,7 +61,7 @@ Partial Class Menu
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.Vector__2_
+        Me.Button2.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.image
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -76,7 +76,7 @@ Partial Class Menu
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.Vector__1_
+        Me.Button1.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.image
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -101,8 +101,8 @@ Partial Class Menu
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.Group
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.image
         Me.PictureBox1.InitialImage = Nothing
         Me.PictureBox1.Location = New System.Drawing.Point(22, 15)
         Me.PictureBox1.Name = "PictureBox1"
@@ -113,7 +113,7 @@ Partial Class Menu
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel2.BackColor = System.Drawing.Color.LightGray
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(140, 206)
@@ -124,12 +124,12 @@ Partial Class Menu
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.Group_43
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.image
         Me.PictureBox2.InitialImage = Nothing
         Me.PictureBox2.Location = New System.Drawing.Point(69, 95)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(62, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
@@ -145,7 +145,7 @@ Partial Class Menu
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
         Me.Panel3.Controls.Add(Me.PictureBox3)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Location = New System.Drawing.Point(394, 206)
@@ -155,11 +155,11 @@ Partial Class Menu
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.Group_45
+        Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.image
         Me.PictureBox3.Location = New System.Drawing.Point(69, 95)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(62, 50)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox3.TabIndex = 1
         Me.PictureBox3.TabStop = False
         '
@@ -176,16 +176,16 @@ Partial Class Menu
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(35, 41)
+        Me.Label4.Location = New System.Drawing.Point(41, 41)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(130, 33)
+        Me.Label4.Size = New System.Drawing.Size(122, 51)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Book Records"
+        Me.Label4.Text = "Book List and Records"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel4.BackColor = System.Drawing.Color.LightGray
         Me.Panel4.Controls.Add(Me.PictureBox4)
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Location = New System.Drawing.Point(652, 206)
@@ -195,11 +195,11 @@ Partial Class Menu
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.Group1
+        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.image
         Me.PictureBox4.Location = New System.Drawing.Point(70, 95)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(62, 50)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox4.TabIndex = 1
         Me.PictureBox4.TabStop = False
         '

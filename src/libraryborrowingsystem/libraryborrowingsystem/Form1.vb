@@ -37,7 +37,7 @@
         Panel2.BackColor = Color.LightGray
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Dim back As New Menu()
         back.Show()
         Me.Hide()
@@ -49,6 +49,4 @@
         borrow.Show()
         Me.Hide()
     End Sub
-
-
 End Class
