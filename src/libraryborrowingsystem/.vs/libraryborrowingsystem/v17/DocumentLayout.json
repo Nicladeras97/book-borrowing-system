@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|c:\\users\\user\\source\\repos\\nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\menu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|solutionrelative:libraryborrowingsystem\\menu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|solutionrelative:libraryborrowingsystem\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|solutionrelative:libraryborrowingsystem\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{1FB12112-7952-45A3-920F-704A19F39110}|libraryborrowingsystem\\libraryborrowingsystem.vbproj|solutionrelative:libraryborrowingsystem\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "login.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\login.vb",
+              "RelativeDocumentMoniker": "libraryborrowingsystem\\login.vb",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\login.vb [Design]",
+              "RelativeToolTip": "libraryborrowingsystem\\login.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-20T06:31:49.917Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "menu.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\menu.vb",
+              "RelativeDocumentMoniker": "libraryborrowingsystem\\menu.vb",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\menu.vb [Design]",
+              "RelativeToolTip": "libraryborrowingsystem\\menu.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-20T06:31:57.572Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\Form1.vb",
+              "RelativeDocumentMoniker": "libraryborrowingsystem\\Form1.vb",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\Form1.vb [Design]",
+              "RelativeToolTip": "libraryborrowingsystem\\Form1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-20T06:32:10.305Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form2.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\Form2.vb",
+              "RelativeDocumentMoniker": "libraryborrowingsystem\\Form2.vb",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Nicladeras97\\book-borrowing-system\\src\\libraryborrowingsystem\\libraryborrowingsystem\\Form2.vb [Design]",
+              "RelativeToolTip": "libraryborrowingsystem\\Form2.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-02-20T06:32:04.713Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
