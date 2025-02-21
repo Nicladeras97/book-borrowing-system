@@ -20,26 +20,26 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("_borrowing_systemDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("_borrowing_systemDataSet1"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class _borrowing_systemDataSet
+Partial Public Class _borrowing_systemDataSet1
     Inherits Global.System.Data.DataSet
     
     Private tablebook As bookDataTable
     
-    Private table_borrowed_books As _borrowed_booksDataTable
+    Private tableborrow As borrowDataTable
     
-    Private tablelibrarian As librarianDataTable
+    Private tablelogin As loginDataTable
     
-    Private table_returned_books As _returned_booksDataTable
+    Private tablereturn As returnDataTable
     
     Private tableusers As usersDataTable
     
-    Private _relationbookborrowed_books As Global.System.Data.DataRelation
+    Private relationborrowbook As Global.System.Data.DataRelation
     
-    Private _relationreturned_booksborrowed_books As Global.System.Data.DataRelation
+    Private relationreturnborrow As Global.System.Data.DataRelation
     
-    Private _relationusersborrowed_books As Global.System.Data.DataRelation
+    Private relationusersborrow As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -73,14 +73,14 @@ Partial Public Class _borrowing_systemDataSet
             If (Not (ds.Tables("book")) Is Nothing) Then
                 MyBase.Tables.Add(New bookDataTable(ds.Tables("book")))
             End If
-            If (Not (ds.Tables("borrowed-books")) Is Nothing) Then
-                MyBase.Tables.Add(New _borrowed_booksDataTable(ds.Tables("borrowed-books")))
+            If (Not (ds.Tables("borrow")) Is Nothing) Then
+                MyBase.Tables.Add(New borrowDataTable(ds.Tables("borrow")))
             End If
-            If (Not (ds.Tables("librarian")) Is Nothing) Then
-                MyBase.Tables.Add(New librarianDataTable(ds.Tables("librarian")))
+            If (Not (ds.Tables("login")) Is Nothing) Then
+                MyBase.Tables.Add(New loginDataTable(ds.Tables("login")))
             End If
-            If (Not (ds.Tables("returned-books")) Is Nothing) Then
-                MyBase.Tables.Add(New _returned_booksDataTable(ds.Tables("returned-books")))
+            If (Not (ds.Tables("return")) Is Nothing) Then
+                MyBase.Tables.Add(New returnDataTable(ds.Tables("return")))
             End If
             If (Not (ds.Tables("users")) Is Nothing) Then
                 MyBase.Tables.Add(New usersDataTable(ds.Tables("users")))
@@ -116,9 +116,9 @@ Partial Public Class _borrowing_systemDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property _borrowed_books() As _borrowed_booksDataTable
+    Public ReadOnly Property borrow() As borrowDataTable
         Get
-            Return Me.table_borrowed_books
+            Return Me.tableborrow
         End Get
     End Property
     
@@ -126,9 +126,9 @@ Partial Public Class _borrowing_systemDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property librarian() As librarianDataTable
+    Public ReadOnly Property login() As loginDataTable
         Get
-            Return Me.tablelibrarian
+            Return Me.tablelogin
         End Get
     End Property
     
@@ -136,9 +136,9 @@ Partial Public Class _borrowing_systemDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property _returned_books() As _returned_booksDataTable
+    Public ReadOnly Property _return() As returnDataTable
         Get
-            Return Me.table_returned_books
+            Return Me.tablereturn
         End Get
     End Property
     
@@ -194,7 +194,7 @@ Partial Public Class _borrowing_systemDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As _borrowing_systemDataSet = CType(MyBase.Clone,_borrowing_systemDataSet)
+        Dim cln As _borrowing_systemDataSet1 = CType(MyBase.Clone,_borrowing_systemDataSet1)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -222,14 +222,14 @@ Partial Public Class _borrowing_systemDataSet
             If (Not (ds.Tables("book")) Is Nothing) Then
                 MyBase.Tables.Add(New bookDataTable(ds.Tables("book")))
             End If
-            If (Not (ds.Tables("borrowed-books")) Is Nothing) Then
-                MyBase.Tables.Add(New _borrowed_booksDataTable(ds.Tables("borrowed-books")))
+            If (Not (ds.Tables("borrow")) Is Nothing) Then
+                MyBase.Tables.Add(New borrowDataTable(ds.Tables("borrow")))
             End If
-            If (Not (ds.Tables("librarian")) Is Nothing) Then
-                MyBase.Tables.Add(New librarianDataTable(ds.Tables("librarian")))
+            If (Not (ds.Tables("login")) Is Nothing) Then
+                MyBase.Tables.Add(New loginDataTable(ds.Tables("login")))
             End If
-            If (Not (ds.Tables("returned-books")) Is Nothing) Then
-                MyBase.Tables.Add(New _returned_booksDataTable(ds.Tables("returned-books")))
+            If (Not (ds.Tables("return")) Is Nothing) Then
+                MyBase.Tables.Add(New returnDataTable(ds.Tables("return")))
             End If
             If (Not (ds.Tables("users")) Is Nothing) Then
                 MyBase.Tables.Add(New usersDataTable(ds.Tables("users")))
@@ -272,22 +272,22 @@ Partial Public Class _borrowing_systemDataSet
                 Me.tablebook.InitVars
             End If
         End If
-        Me.table_borrowed_books = CType(MyBase.Tables("borrowed-books"),_borrowed_booksDataTable)
+        Me.tableborrow = CType(MyBase.Tables("borrow"),borrowDataTable)
         If (initTable = true) Then
-            If (Not (Me.table_borrowed_books) Is Nothing) Then
-                Me.table_borrowed_books.InitVars
+            If (Not (Me.tableborrow) Is Nothing) Then
+                Me.tableborrow.InitVars
             End If
         End If
-        Me.tablelibrarian = CType(MyBase.Tables("librarian"),librarianDataTable)
+        Me.tablelogin = CType(MyBase.Tables("login"),loginDataTable)
         If (initTable = true) Then
-            If (Not (Me.tablelibrarian) Is Nothing) Then
-                Me.tablelibrarian.InitVars
+            If (Not (Me.tablelogin) Is Nothing) Then
+                Me.tablelogin.InitVars
             End If
         End If
-        Me.table_returned_books = CType(MyBase.Tables("returned-books"),_returned_booksDataTable)
+        Me.tablereturn = CType(MyBase.Tables("return"),returnDataTable)
         If (initTable = true) Then
-            If (Not (Me.table_returned_books) Is Nothing) Then
-                Me.table_returned_books.InitVars
+            If (Not (Me.tablereturn) Is Nothing) Then
+                Me.tablereturn.InitVars
             End If
         End If
         Me.tableusers = CType(MyBase.Tables("users"),usersDataTable)
@@ -296,35 +296,35 @@ Partial Public Class _borrowing_systemDataSet
                 Me.tableusers.InitVars
             End If
         End If
-        Me._relationbookborrowed_books = Me.Relations("bookborrowed-books")
-        Me._relationreturned_booksborrowed_books = Me.Relations("returned-booksborrowed-books")
-        Me._relationusersborrowed_books = Me.Relations("usersborrowed-books")
+        Me.relationborrowbook = Me.Relations("borrowbook")
+        Me.relationreturnborrow = Me.Relations("returnborrow")
+        Me.relationusersborrow = Me.Relations("usersborrow")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "_borrowing_systemDataSet"
+        Me.DataSetName = "_borrowing_systemDataSet1"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/_borrowing_systemDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/_borrowing_systemDataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tablebook = New bookDataTable()
         MyBase.Tables.Add(Me.tablebook)
-        Me.table_borrowed_books = New _borrowed_booksDataTable()
-        MyBase.Tables.Add(Me.table_borrowed_books)
-        Me.tablelibrarian = New librarianDataTable()
-        MyBase.Tables.Add(Me.tablelibrarian)
-        Me.table_returned_books = New _returned_booksDataTable()
-        MyBase.Tables.Add(Me.table_returned_books)
+        Me.tableborrow = New borrowDataTable()
+        MyBase.Tables.Add(Me.tableborrow)
+        Me.tablelogin = New loginDataTable()
+        MyBase.Tables.Add(Me.tablelogin)
+        Me.tablereturn = New returnDataTable()
+        MyBase.Tables.Add(Me.tablereturn)
         Me.tableusers = New usersDataTable()
         MyBase.Tables.Add(Me.tableusers)
-        Me._relationbookborrowed_books = New Global.System.Data.DataRelation("bookborrowed-books", New Global.System.Data.DataColumn() {Me.tablebook.BookIDColumn}, New Global.System.Data.DataColumn() {Me.table_borrowed_books.BookIDColumn}, false)
-        Me.Relations.Add(Me._relationbookborrowed_books)
-        Me._relationreturned_booksborrowed_books = New Global.System.Data.DataRelation("returned-booksborrowed-books", New Global.System.Data.DataColumn() {Me.table_returned_books.StudentOrFacultyIDColumn}, New Global.System.Data.DataColumn() {Me.table_borrowed_books.StudentOrFacultyIDColumn}, false)
-        Me.Relations.Add(Me._relationreturned_booksborrowed_books)
-        Me._relationusersborrowed_books = New Global.System.Data.DataRelation("usersborrowed-books", New Global.System.Data.DataColumn() {Me.tableusers.StudentOrFacultyIDColumn, Me.tableusers.UserIDColumn}, New Global.System.Data.DataColumn() {Me.table_borrowed_books.StudentOrFacultyIDColumn, Me.table_borrowed_books.UserIDColumn}, false)
-        Me.Relations.Add(Me._relationusersborrowed_books)
+        Me.relationborrowbook = New Global.System.Data.DataRelation("borrowbook", New Global.System.Data.DataColumn() {Me.tableborrow.BookIDColumn}, New Global.System.Data.DataColumn() {Me.tablebook.BookIDColumn}, false)
+        Me.Relations.Add(Me.relationborrowbook)
+        Me.relationreturnborrow = New Global.System.Data.DataRelation("returnborrow", New Global.System.Data.DataColumn() {Me.tablereturn.BorrowersIDColumn}, New Global.System.Data.DataColumn() {Me.tableborrow.BorrowersIDColumn}, false)
+        Me.Relations.Add(Me.relationreturnborrow)
+        Me.relationusersborrow = New Global.System.Data.DataRelation("usersborrow", New Global.System.Data.DataColumn() {Me.tableusers.BorrowersIDColumn}, New Global.System.Data.DataColumn() {Me.tableborrow.BorrowersIDColumn}, false)
+        Me.Relations.Add(Me.relationusersborrow)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -335,19 +335,19 @@ Partial Public Class _borrowing_systemDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerialize_borrowed_books() As Boolean
+    Private Function ShouldSerializeborrow() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializelibrarian() As Boolean
+    Private Function ShouldSerializelogin() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerialize_returned_books() As Boolean
+    Private Function ShouldSerialize_return() As Boolean
         Return false
     End Function
     
@@ -368,7 +368,7 @@ Partial Public Class _borrowing_systemDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As _borrowing_systemDataSet = New _borrowing_systemDataSet()
+        Dim ds As _borrowing_systemDataSet1 = New _borrowing_systemDataSet1()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -419,13 +419,13 @@ Partial Public Class _borrowing_systemDataSet
     Public Delegate Sub bookRowChangeEventHandler(ByVal sender As Object, ByVal e As bookRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub _borrowed_booksRowChangeEventHandler(ByVal sender As Object, ByVal e As _borrowed_booksRowChangeEvent)
+    Public Delegate Sub borrowRowChangeEventHandler(ByVal sender As Object, ByVal e As borrowRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub librarianRowChangeEventHandler(ByVal sender As Object, ByVal e As librarianRowChangeEvent)
+    Public Delegate Sub loginRowChangeEventHandler(ByVal sender As Object, ByVal e As loginRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub _returned_booksRowChangeEventHandler(ByVal sender As Object, ByVal e As _returned_booksRowChangeEvent)
+    Public Delegate Sub returnRowChangeEventHandler(ByVal sender As Object, ByVal e As returnRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Delegate Sub usersRowChangeEventHandler(ByVal sender As Object, ByVal e As usersRowChangeEvent)
@@ -438,15 +438,21 @@ Partial Public Class _borrowing_systemDataSet
     Partial Public Class bookDataTable
         Inherits Global.System.Data.TypedTableBase(Of bookRow)
         
+        Private columnBID As Global.System.Data.DataColumn
+        
         Private columnBookID As Global.System.Data.DataColumn
         
         Private columnTitle As Global.System.Data.DataColumn
         
         Private columnAuthor As Global.System.Data.DataColumn
         
+        Private columnYear As Global.System.Data.DataColumn
+        
         Private columnISBN As Global.System.Data.DataColumn
         
-        Private columnGenre As Global.System.Data.DataColumn
+        Private columnType As Global.System.Data.DataColumn
+        
+        Private columnCategory As Global.System.Data.DataColumn
         
         Private columnStatus As Global.System.Data.DataColumn
         
@@ -487,6 +493,14 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property BIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property BookIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnBookID
@@ -511,6 +525,14 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property YearColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnYear
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property ISBNColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnISBN
@@ -519,9 +541,17 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property GenreColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property TypeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnGenre
+                Return Me.columnType
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property CategoryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCategory
             End Get
         End Property
         
@@ -570,9 +600,12 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddbookRow(ByVal Title As String, ByVal Author As String, ByVal ISBN As String, ByVal Genre As String, ByVal Status As String) As bookRow
+        Public Overloads Function AddbookRow(ByVal parentborrowRowByborrowbook As borrowRow, ByVal Title As String, ByVal Author As String, ByVal Year As String, ByVal ISBN As String, ByVal Type As String, ByVal Category As String, ByVal Status As String) As bookRow
             Dim rowbookRow As bookRow = CType(Me.NewRow,bookRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Title, Author, ISBN, Genre, Status}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Title, Author, Year, ISBN, Type, Category, Status}
+            If (Not (parentborrowRowByborrowbook) Is Nothing) Then
+                columnValuesArray(1) = parentborrowRowByborrowbook(2)
+            End If
             rowbookRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowbookRow)
             Return rowbookRow
@@ -580,8 +613,8 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByBookID(ByVal BookID As Integer) As bookRow
-            Return CType(Me.Rows.Find(New Object() {BookID}),bookRow)
+        Public Function FindByBID(ByVal BID As Integer) As bookRow
+            Return CType(Me.Rows.Find(New Object() {BID}),bookRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -601,39 +634,51 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnBID = MyBase.Columns("BID")
             Me.columnBookID = MyBase.Columns("BookID")
             Me.columnTitle = MyBase.Columns("Title")
             Me.columnAuthor = MyBase.Columns("Author")
+            Me.columnYear = MyBase.Columns("Year")
             Me.columnISBN = MyBase.Columns("ISBN")
-            Me.columnGenre = MyBase.Columns("Genre")
+            Me.columnType = MyBase.Columns("Type")
+            Me.columnCategory = MyBase.Columns("Category")
             Me.columnStatus = MyBase.Columns("Status")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnBookID = New Global.System.Data.DataColumn("BookID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnBID = New Global.System.Data.DataColumn("BID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBID)
+            Me.columnBookID = New Global.System.Data.DataColumn("BookID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookID)
             Me.columnTitle = New Global.System.Data.DataColumn("Title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTitle)
             Me.columnAuthor = New Global.System.Data.DataColumn("Author", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAuthor)
+            Me.columnYear = New Global.System.Data.DataColumn("Year", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnYear)
             Me.columnISBN = New Global.System.Data.DataColumn("ISBN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnISBN)
-            Me.columnGenre = New Global.System.Data.DataColumn("Genre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGenre)
+            Me.columnType = New Global.System.Data.DataColumn("Type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnType)
+            Me.columnCategory = New Global.System.Data.DataColumn("Category", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCategory)
             Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStatus)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnBookID}, true))
-            Me.columnBookID.AutoIncrement = true
-            Me.columnBookID.AutoIncrementSeed = -1
-            Me.columnBookID.AutoIncrementStep = -1
-            Me.columnBookID.AllowDBNull = false
-            Me.columnBookID.Unique = true
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnBID}, true))
+            Me.columnBID.AutoIncrement = true
+            Me.columnBID.AutoIncrementSeed = -1
+            Me.columnBID.AutoIncrementStep = -1
+            Me.columnBID.AllowDBNull = false
+            Me.columnBID.Unique = true
+            Me.columnBookID.MaxLength = 255
             Me.columnTitle.MaxLength = 255
             Me.columnAuthor.MaxLength = 255
+            Me.columnYear.MaxLength = 255
             Me.columnISBN.MaxLength = 255
-            Me.columnGenre.MaxLength = 255
+            Me.columnType.MaxLength = 255
+            Me.columnCategory.MaxLength = 255
             Me.columnStatus.MaxLength = 255
         End Sub
         
@@ -702,7 +747,7 @@ Partial Public Class _borrowing_systemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As _borrowing_systemDataSet = New _borrowing_systemDataSet()
+            Dim ds As _borrowing_systemDataSet1 = New _borrowing_systemDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -769,14 +814,12 @@ Partial Public Class _borrowing_systemDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class _borrowed_booksDataTable
-        Inherits Global.System.Data.TypedTableBase(Of _borrowed_booksRow)
-        
-        Private columnStudentOrFacultyID As Global.System.Data.DataColumn
+    Partial Public Class borrowDataTable
+        Inherits Global.System.Data.TypedTableBase(Of borrowRow)
         
         Private columnBorrowID As Global.System.Data.DataColumn
         
-        Private columnUserID As Global.System.Data.DataColumn
+        Private columnBorrowersID As Global.System.Data.DataColumn
         
         Private columnBookID As Global.System.Data.DataColumn
         
@@ -790,7 +833,7 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "borrowed-books"
+            Me.TableName = "borrow"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -823,14 +866,6 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property StudentOrFacultyIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnStudentOrFacultyID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property BorrowIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnBorrowID
@@ -839,9 +874,9 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property UserIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property BorrowersIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUserID
+                Return Me.columnBorrowersID
             End Get
         End Property
         
@@ -888,56 +923,53 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As _borrowed_booksRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As borrowRow
             Get
-                Return CType(Me.Rows(index),_borrowed_booksRow)
+                Return CType(Me.Rows(index),borrowRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _borrowed_booksRowChanging As _borrowed_booksRowChangeEventHandler
+        Public Event borrowRowChanging As borrowRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _borrowed_booksRowChanged As _borrowed_booksRowChangeEventHandler
+        Public Event borrowRowChanged As borrowRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _borrowed_booksRowDeleting As _borrowed_booksRowChangeEventHandler
+        Public Event borrowRowDeleting As borrowRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _borrowed_booksRowDeleted As _borrowed_booksRowChangeEventHandler
+        Public Event borrowRowDeleted As borrowRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub Add_borrowed_booksRow(ByVal row As _borrowed_booksRow)
+        Public Overloads Sub AddborrowRow(ByVal row As borrowRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function Add_borrowed_booksRow(ByVal _parent_returned_booksRowByreturned_booksborrowed_books As _returned_booksRow, ByVal UserID As Integer, ByVal _parentbookRowBybookborrowed_books As bookRow, ByVal BorrowDate As Date, ByVal DueDate As Date, ByVal Status As String) As _borrowed_booksRow
-            Dim row_borrowed_booksRow As _borrowed_booksRow = CType(Me.NewRow,_borrowed_booksRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, UserID, Nothing, BorrowDate, DueDate, Status}
-            If (Not (_parent_returned_booksRowByreturned_booksborrowed_books) Is Nothing) Then
-                columnValuesArray(0) = _parent_returned_booksRowByreturned_booksborrowed_books(0)
+        Public Overloads Function AddborrowRow(ByVal parentreturnRowByreturnborrow As returnRow, ByVal BookID As String, ByVal BorrowDate As Date, ByVal DueDate As Date, ByVal Status As String) As borrowRow
+            Dim rowborrowRow As borrowRow = CType(Me.NewRow,borrowRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, BookID, BorrowDate, DueDate, Status}
+            If (Not (parentreturnRowByreturnborrow) Is Nothing) Then
+                columnValuesArray(1) = parentreturnRowByreturnborrow(1)
             End If
-            If (Not (_parentbookRowBybookborrowed_books) Is Nothing) Then
-                columnValuesArray(3) = _parentbookRowBybookborrowed_books(0)
-            End If
-            row_borrowed_booksRow.ItemArray = columnValuesArray
-            Me.Rows.Add(row_borrowed_booksRow)
-            Return row_borrowed_booksRow
+            rowborrowRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowborrowRow)
+            Return rowborrowRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByBorrowID(ByVal BorrowID As Integer) As _borrowed_booksRow
-            Return CType(Me.Rows.Find(New Object() {BorrowID}),_borrowed_booksRow)
+        Public Function FindByBorrowID(ByVal BorrowID As Integer) As borrowRow
+            Return CType(Me.Rows.Find(New Object() {BorrowID}),borrowRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As _borrowed_booksDataTable = CType(MyBase.Clone,_borrowed_booksDataTable)
+            Dim cln As borrowDataTable = CType(MyBase.Clone,borrowDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -945,15 +977,14 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New _borrowed_booksDataTable()
+            Return New borrowDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnStudentOrFacultyID = MyBase.Columns("StudentOrFacultyID")
             Me.columnBorrowID = MyBase.Columns("BorrowID")
-            Me.columnUserID = MyBase.Columns("UserID")
+            Me.columnBorrowersID = MyBase.Columns("BorrowersID")
             Me.columnBookID = MyBase.Columns("BookID")
             Me.columnBorrowDate = MyBase.Columns("BorrowDate")
             Me.columnDueDate = MyBase.Columns("DueDate")
@@ -963,13 +994,11 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnStudentOrFacultyID = New Global.System.Data.DataColumn("StudentOrFacultyID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStudentOrFacultyID)
             Me.columnBorrowID = New Global.System.Data.DataColumn("BorrowID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBorrowID)
-            Me.columnUserID = New Global.System.Data.DataColumn("UserID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUserID)
-            Me.columnBookID = New Global.System.Data.DataColumn("BookID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnBorrowersID = New Global.System.Data.DataColumn("BorrowersID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBorrowersID)
+            Me.columnBookID = New Global.System.Data.DataColumn("BookID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookID)
             Me.columnBorrowDate = New Global.System.Data.DataColumn("BorrowDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBorrowDate)
@@ -978,39 +1007,40 @@ Partial Public Class _borrowing_systemDataSet
             Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStatus)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnBorrowID}, true))
-            Me.columnStudentOrFacultyID.MaxLength = 255
             Me.columnBorrowID.AutoIncrement = true
             Me.columnBorrowID.AutoIncrementSeed = -1
             Me.columnBorrowID.AutoIncrementStep = -1
             Me.columnBorrowID.AllowDBNull = false
             Me.columnBorrowID.Unique = true
+            Me.columnBorrowersID.MaxLength = 255
+            Me.columnBookID.MaxLength = 255
             Me.columnStatus.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function New_borrowed_booksRow() As _borrowed_booksRow
-            Return CType(Me.NewRow,_borrowed_booksRow)
+        Public Function NewborrowRow() As borrowRow
+            Return CType(Me.NewRow,borrowRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New _borrowed_booksRow(builder)
+            Return New borrowRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(_borrowed_booksRow)
+            Return GetType(borrowRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me._borrowed_booksRowChangedEvent) Is Nothing) Then
-                RaiseEvent _borrowed_booksRowChanged(Me, New _borrowed_booksRowChangeEvent(CType(e.Row,_borrowed_booksRow), e.Action))
+            If (Not (Me.borrowRowChangedEvent) Is Nothing) Then
+                RaiseEvent borrowRowChanged(Me, New borrowRowChangeEvent(CType(e.Row,borrowRow), e.Action))
             End If
         End Sub
         
@@ -1018,8 +1048,8 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me._borrowed_booksRowChangingEvent) Is Nothing) Then
-                RaiseEvent _borrowed_booksRowChanging(Me, New _borrowed_booksRowChangeEvent(CType(e.Row,_borrowed_booksRow), e.Action))
+            If (Not (Me.borrowRowChangingEvent) Is Nothing) Then
+                RaiseEvent borrowRowChanging(Me, New borrowRowChangeEvent(CType(e.Row,borrowRow), e.Action))
             End If
         End Sub
         
@@ -1027,8 +1057,8 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me._borrowed_booksRowDeletedEvent) Is Nothing) Then
-                RaiseEvent _borrowed_booksRowDeleted(Me, New _borrowed_booksRowChangeEvent(CType(e.Row,_borrowed_booksRow), e.Action))
+            If (Not (Me.borrowRowDeletedEvent) Is Nothing) Then
+                RaiseEvent borrowRowDeleted(Me, New borrowRowChangeEvent(CType(e.Row,borrowRow), e.Action))
             End If
         End Sub
         
@@ -1036,14 +1066,14 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me._borrowed_booksRowDeletingEvent) Is Nothing) Then
-                RaiseEvent _borrowed_booksRowDeleting(Me, New _borrowed_booksRowChangeEvent(CType(e.Row,_borrowed_booksRow), e.Action))
+            If (Not (Me.borrowRowDeletingEvent) Is Nothing) Then
+                RaiseEvent borrowRowDeleting(Me, New borrowRowChangeEvent(CType(e.Row,borrowRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Remove_borrowed_booksRow(ByVal row As _borrowed_booksRow)
+        Public Sub RemoveborrowRow(ByVal row As borrowRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1052,7 +1082,7 @@ Partial Public Class _borrowing_systemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As _borrowing_systemDataSet = New _borrowing_systemDataSet()
+            Dim ds As _borrowing_systemDataSet1 = New _borrowing_systemDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1070,7 +1100,7 @@ Partial Public Class _borrowing_systemDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "_borrowed_booksDataTable"
+            attribute2.FixedValue = "borrowDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1119,10 +1149,10 @@ Partial Public Class _borrowing_systemDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class librarianDataTable
-        Inherits Global.System.Data.TypedTableBase(Of librarianRow)
+    Partial Public Class loginDataTable
+        Inherits Global.System.Data.TypedTableBase(Of loginRow)
         
-        Private columnLibrarianID As Global.System.Data.DataColumn
+        Private columnLID As Global.System.Data.DataColumn
         
         Private columnUsername As Global.System.Data.DataColumn
         
@@ -1132,7 +1162,7 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "librarian"
+            Me.TableName = "login"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1165,9 +1195,9 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property LibrarianIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property LIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnLibrarianID
+                Return Me.columnLID
             End Get
         End Property
         
@@ -1198,50 +1228,50 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As librarianRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As loginRow
             Get
-                Return CType(Me.Rows(index),librarianRow)
+                Return CType(Me.Rows(index),loginRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event librarianRowChanging As librarianRowChangeEventHandler
+        Public Event loginRowChanging As loginRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event librarianRowChanged As librarianRowChangeEventHandler
+        Public Event loginRowChanged As loginRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event librarianRowDeleting As librarianRowChangeEventHandler
+        Public Event loginRowDeleting As loginRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event librarianRowDeleted As librarianRowChangeEventHandler
+        Public Event loginRowDeleted As loginRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddlibrarianRow(ByVal row As librarianRow)
+        Public Overloads Sub AddloginRow(ByVal row As loginRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddlibrarianRow(ByVal Username As String, ByVal Password As String) As librarianRow
-            Dim rowlibrarianRow As librarianRow = CType(Me.NewRow,librarianRow)
+        Public Overloads Function AddloginRow(ByVal Username As String, ByVal Password As String) As loginRow
+            Dim rowloginRow As loginRow = CType(Me.NewRow,loginRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, Username, Password}
-            rowlibrarianRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowlibrarianRow)
-            Return rowlibrarianRow
+            rowloginRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowloginRow)
+            Return rowloginRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByLibrarianID(ByVal LibrarianID As Integer) As librarianRow
-            Return CType(Me.Rows.Find(New Object() {LibrarianID}),librarianRow)
+        Public Function FindByLID(ByVal LID As Integer) As loginRow
+            Return CType(Me.Rows.Find(New Object() {LID}),loginRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As librarianDataTable = CType(MyBase.Clone,librarianDataTable)
+            Dim cln As loginDataTable = CType(MyBase.Clone,loginDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1249,13 +1279,13 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New librarianDataTable()
+            Return New loginDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnLibrarianID = MyBase.Columns("LibrarianID")
+            Me.columnLID = MyBase.Columns("LID")
             Me.columnUsername = MyBase.Columns("Username")
             Me.columnPassword = MyBase.Columns("Password")
         End Sub
@@ -1263,46 +1293,46 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnLibrarianID = New Global.System.Data.DataColumn("LibrarianID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnLibrarianID)
+            Me.columnLID = New Global.System.Data.DataColumn("LID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLID)
             Me.columnUsername = New Global.System.Data.DataColumn("Username", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUsername)
             Me.columnPassword = New Global.System.Data.DataColumn("Password", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPassword)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnLibrarianID}, true))
-            Me.columnLibrarianID.AutoIncrement = true
-            Me.columnLibrarianID.AutoIncrementSeed = -1
-            Me.columnLibrarianID.AutoIncrementStep = -1
-            Me.columnLibrarianID.AllowDBNull = false
-            Me.columnLibrarianID.Unique = true
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnLID}, true))
+            Me.columnLID.AutoIncrement = true
+            Me.columnLID.AutoIncrementSeed = -1
+            Me.columnLID.AutoIncrementStep = -1
+            Me.columnLID.AllowDBNull = false
+            Me.columnLID.Unique = true
             Me.columnUsername.MaxLength = 255
             Me.columnPassword.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewlibrarianRow() As librarianRow
-            Return CType(Me.NewRow,librarianRow)
+        Public Function NewloginRow() As loginRow
+            Return CType(Me.NewRow,loginRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New librarianRow(builder)
+            Return New loginRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(librarianRow)
+            Return GetType(loginRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.librarianRowChangedEvent) Is Nothing) Then
-                RaiseEvent librarianRowChanged(Me, New librarianRowChangeEvent(CType(e.Row,librarianRow), e.Action))
+            If (Not (Me.loginRowChangedEvent) Is Nothing) Then
+                RaiseEvent loginRowChanged(Me, New loginRowChangeEvent(CType(e.Row,loginRow), e.Action))
             End If
         End Sub
         
@@ -1310,8 +1340,8 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.librarianRowChangingEvent) Is Nothing) Then
-                RaiseEvent librarianRowChanging(Me, New librarianRowChangeEvent(CType(e.Row,librarianRow), e.Action))
+            If (Not (Me.loginRowChangingEvent) Is Nothing) Then
+                RaiseEvent loginRowChanging(Me, New loginRowChangeEvent(CType(e.Row,loginRow), e.Action))
             End If
         End Sub
         
@@ -1319,8 +1349,8 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.librarianRowDeletedEvent) Is Nothing) Then
-                RaiseEvent librarianRowDeleted(Me, New librarianRowChangeEvent(CType(e.Row,librarianRow), e.Action))
+            If (Not (Me.loginRowDeletedEvent) Is Nothing) Then
+                RaiseEvent loginRowDeleted(Me, New loginRowChangeEvent(CType(e.Row,loginRow), e.Action))
             End If
         End Sub
         
@@ -1328,14 +1358,14 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.librarianRowDeletingEvent) Is Nothing) Then
-                RaiseEvent librarianRowDeleting(Me, New librarianRowChangeEvent(CType(e.Row,librarianRow), e.Action))
+            If (Not (Me.loginRowDeletingEvent) Is Nothing) Then
+                RaiseEvent loginRowDeleting(Me, New loginRowChangeEvent(CType(e.Row,loginRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemovelibrarianRow(ByVal row As librarianRow)
+        Public Sub RemoveloginRow(ByVal row As loginRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1344,7 +1374,7 @@ Partial Public Class _borrowing_systemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As _borrowing_systemDataSet = New _borrowing_systemDataSet()
+            Dim ds As _borrowing_systemDataSet1 = New _borrowing_systemDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1362,7 +1392,7 @@ Partial Public Class _borrowing_systemDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "librarianDataTable"
+            attribute2.FixedValue = "loginDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1411,12 +1441,12 @@ Partial Public Class _borrowing_systemDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class _returned_booksDataTable
-        Inherits Global.System.Data.TypedTableBase(Of _returned_booksRow)
-        
-        Private columnStudentOrFacultyID As Global.System.Data.DataColumn
+    Partial Public Class returnDataTable
+        Inherits Global.System.Data.TypedTableBase(Of returnRow)
         
         Private columnReturnID As Global.System.Data.DataColumn
+        
+        Private columnBorrowersID As Global.System.Data.DataColumn
         
         Private columnBorrowID As Global.System.Data.DataColumn
         
@@ -1428,7 +1458,7 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "returned-books"
+            Me.TableName = "return"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1461,17 +1491,17 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property StudentOrFacultyIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ReturnIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStudentOrFacultyID
+                Return Me.columnReturnID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ReturnIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property BorrowersIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnReturnID
+                Return Me.columnBorrowersID
             End Get
         End Property
         
@@ -1510,50 +1540,50 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As _returned_booksRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As returnRow
             Get
-                Return CType(Me.Rows(index),_returned_booksRow)
+                Return CType(Me.Rows(index),returnRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _returned_booksRowChanging As _returned_booksRowChangeEventHandler
+        Public Event returnRowChanging As returnRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _returned_booksRowChanged As _returned_booksRowChangeEventHandler
+        Public Event returnRowChanged As returnRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _returned_booksRowDeleting As _returned_booksRowChangeEventHandler
+        Public Event returnRowDeleting As returnRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event _returned_booksRowDeleted As _returned_booksRowChangeEventHandler
+        Public Event returnRowDeleted As returnRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub Add_returned_booksRow(ByVal row As _returned_booksRow)
+        Public Overloads Sub AddreturnRow(ByVal row As returnRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function Add_returned_booksRow(ByVal StudentOrFacultyID As String, ByVal BorrowID As Integer, ByVal ReturnDate As Date, ByVal Condition As String) As _returned_booksRow
-            Dim row_returned_booksRow As _returned_booksRow = CType(Me.NewRow,_returned_booksRow)
-            Dim columnValuesArray() As Object = New Object() {StudentOrFacultyID, Nothing, BorrowID, ReturnDate, Condition}
-            row_returned_booksRow.ItemArray = columnValuesArray
-            Me.Rows.Add(row_returned_booksRow)
-            Return row_returned_booksRow
+        Public Overloads Function AddreturnRow(ByVal BorrowersID As String, ByVal BorrowID As String, ByVal ReturnDate As Date, ByVal Condition As String) As returnRow
+            Dim rowreturnRow As returnRow = CType(Me.NewRow,returnRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, BorrowersID, BorrowID, ReturnDate, Condition}
+            rowreturnRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowreturnRow)
+            Return rowreturnRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByReturnID(ByVal ReturnID As Integer) As _returned_booksRow
-            Return CType(Me.Rows.Find(New Object() {ReturnID}),_returned_booksRow)
+        Public Function FindByReturnID(ByVal ReturnID As Integer) As returnRow
+            Return CType(Me.Rows.Find(New Object() {ReturnID}),returnRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As _returned_booksDataTable = CType(MyBase.Clone,_returned_booksDataTable)
+            Dim cln As returnDataTable = CType(MyBase.Clone,returnDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1561,14 +1591,14 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New _returned_booksDataTable()
+            Return New returnDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnStudentOrFacultyID = MyBase.Columns("StudentOrFacultyID")
             Me.columnReturnID = MyBase.Columns("ReturnID")
+            Me.columnBorrowersID = MyBase.Columns("BorrowersID")
             Me.columnBorrowID = MyBase.Columns("BorrowID")
             Me.columnReturnDate = MyBase.Columns("ReturnDate")
             Me.columnCondition = MyBase.Columns("Condition")
@@ -1577,50 +1607,57 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnStudentOrFacultyID = New Global.System.Data.DataColumn("StudentOrFacultyID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStudentOrFacultyID)
             Me.columnReturnID = New Global.System.Data.DataColumn("ReturnID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnReturnID)
-            Me.columnBorrowID = New Global.System.Data.DataColumn("BorrowID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnBorrowersID = New Global.System.Data.DataColumn("BorrowersID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBorrowersID)
+            Me.columnBorrowID = New Global.System.Data.DataColumn("BorrowID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBorrowID)
             Me.columnReturnDate = New Global.System.Data.DataColumn("ReturnDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnReturnDate)
             Me.columnCondition = New Global.System.Data.DataColumn("Condition", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCondition)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnReturnID}, true))
-            Me.columnStudentOrFacultyID.MaxLength = 255
             Me.columnReturnID.AutoIncrement = true
             Me.columnReturnID.AutoIncrementSeed = -1
             Me.columnReturnID.AutoIncrementStep = -1
             Me.columnReturnID.AllowDBNull = false
             Me.columnReturnID.Unique = true
+            Me.columnBorrowersID.MaxLength = 255
+            Me.columnBorrowID.MaxLength = 255
             Me.columnCondition.MaxLength = 255
+            Me.ExtendedProperties.Add("Generator_RowClassName", "returnRow")
+            Me.ExtendedProperties.Add("Generator_RowEvArgName", "returnRowChangeEvent")
+            Me.ExtendedProperties.Add("Generator_RowEvHandlerName", "returnRowChangeEventHandler")
+            Me.ExtendedProperties.Add("Generator_TableClassName", "returnDataTable")
+            Me.ExtendedProperties.Add("Generator_TableVarName", "tablereturn")
+            Me.ExtendedProperties.Add("Generator_UserTableName", "return")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function New_returned_booksRow() As _returned_booksRow
-            Return CType(Me.NewRow,_returned_booksRow)
+        Public Function NewreturnRow() As returnRow
+            Return CType(Me.NewRow,returnRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New _returned_booksRow(builder)
+            Return New returnRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(_returned_booksRow)
+            Return GetType(returnRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me._returned_booksRowChangedEvent) Is Nothing) Then
-                RaiseEvent _returned_booksRowChanged(Me, New _returned_booksRowChangeEvent(CType(e.Row,_returned_booksRow), e.Action))
+            If (Not (Me.returnRowChangedEvent) Is Nothing) Then
+                RaiseEvent returnRowChanged(Me, New returnRowChangeEvent(CType(e.Row,returnRow), e.Action))
             End If
         End Sub
         
@@ -1628,8 +1665,8 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me._returned_booksRowChangingEvent) Is Nothing) Then
-                RaiseEvent _returned_booksRowChanging(Me, New _returned_booksRowChangeEvent(CType(e.Row,_returned_booksRow), e.Action))
+            If (Not (Me.returnRowChangingEvent) Is Nothing) Then
+                RaiseEvent returnRowChanging(Me, New returnRowChangeEvent(CType(e.Row,returnRow), e.Action))
             End If
         End Sub
         
@@ -1637,8 +1674,8 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me._returned_booksRowDeletedEvent) Is Nothing) Then
-                RaiseEvent _returned_booksRowDeleted(Me, New _returned_booksRowChangeEvent(CType(e.Row,_returned_booksRow), e.Action))
+            If (Not (Me.returnRowDeletedEvent) Is Nothing) Then
+                RaiseEvent returnRowDeleted(Me, New returnRowChangeEvent(CType(e.Row,returnRow), e.Action))
             End If
         End Sub
         
@@ -1646,14 +1683,14 @@ Partial Public Class _borrowing_systemDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me._returned_booksRowDeletingEvent) Is Nothing) Then
-                RaiseEvent _returned_booksRowDeleting(Me, New _returned_booksRowChangeEvent(CType(e.Row,_returned_booksRow), e.Action))
+            If (Not (Me.returnRowDeletingEvent) Is Nothing) Then
+                RaiseEvent returnRowDeleting(Me, New returnRowChangeEvent(CType(e.Row,returnRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Remove_returned_booksRow(ByVal row As _returned_booksRow)
+        Public Sub RemovereturnRow(ByVal row As returnRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1662,7 +1699,7 @@ Partial Public Class _borrowing_systemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As _borrowing_systemDataSet = New _borrowing_systemDataSet()
+            Dim ds As _borrowing_systemDataSet1 = New _borrowing_systemDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1680,7 +1717,7 @@ Partial Public Class _borrowing_systemDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "_returned_booksDataTable"
+            attribute2.FixedValue = "returnDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1732,9 +1769,9 @@ Partial Public Class _borrowing_systemDataSet
     Partial Public Class usersDataTable
         Inherits Global.System.Data.TypedTableBase(Of usersRow)
         
-        Private columnStudentOrFacultyID As Global.System.Data.DataColumn
+        Private columnUID As Global.System.Data.DataColumn
         
-        Private columnUserID As Global.System.Data.DataColumn
+        Private columnBorrowersID As Global.System.Data.DataColumn
         
         Private columnFullName As Global.System.Data.DataColumn
         
@@ -1779,17 +1816,17 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property StudentOrFacultyIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property UIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnStudentOrFacultyID
+                Return Me.columnUID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property UserIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property BorrowersIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUserID
+                Return Me.columnBorrowersID
             End Get
         End Property
         
@@ -1854,9 +1891,9 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddusersRow(ByVal StudentOrFacultyID As String, ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String) As usersRow
+        Public Overloads Function AddusersRow(ByVal BorrowersID As String, ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String) As usersRow
             Dim rowusersRow As usersRow = CType(Me.NewRow,usersRow)
-            Dim columnValuesArray() As Object = New Object() {StudentOrFacultyID, Nothing, FullName, ContactNumber, Type}
+            Dim columnValuesArray() As Object = New Object() {Nothing, BorrowersID, FullName, ContactNumber, Type}
             rowusersRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowusersRow)
             Return rowusersRow
@@ -1864,8 +1901,8 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByUserID(ByVal UserID As Integer) As usersRow
-            Return CType(Me.Rows.Find(New Object() {UserID}),usersRow)
+        Public Function FindByBorrowersID(ByVal BorrowersID As String) As usersRow
+            Return CType(Me.Rows.Find(New Object() {BorrowersID}),usersRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1885,8 +1922,8 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnStudentOrFacultyID = MyBase.Columns("StudentOrFacultyID")
-            Me.columnUserID = MyBase.Columns("UserID")
+            Me.columnUID = MyBase.Columns("UID")
+            Me.columnBorrowersID = MyBase.Columns("BorrowersID")
             Me.columnFullName = MyBase.Columns("FullName")
             Me.columnContactNumber = MyBase.Columns("ContactNumber")
             Me.columnType = MyBase.Columns("Type")
@@ -1895,23 +1932,23 @@ Partial Public Class _borrowing_systemDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnStudentOrFacultyID = New Global.System.Data.DataColumn("StudentOrFacultyID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnStudentOrFacultyID)
-            Me.columnUserID = New Global.System.Data.DataColumn("UserID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUserID)
+            Me.columnUID = New Global.System.Data.DataColumn("UID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUID)
+            Me.columnBorrowersID = New Global.System.Data.DataColumn("BorrowersID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBorrowersID)
             Me.columnFullName = New Global.System.Data.DataColumn("FullName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFullName)
             Me.columnContactNumber = New Global.System.Data.DataColumn("ContactNumber", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnContactNumber)
             Me.columnType = New Global.System.Data.DataColumn("Type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnType)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnUserID}, true))
-            Me.columnStudentOrFacultyID.MaxLength = 255
-            Me.columnUserID.AutoIncrement = true
-            Me.columnUserID.AutoIncrementSeed = -1
-            Me.columnUserID.AutoIncrementStep = -1
-            Me.columnUserID.AllowDBNull = false
-            Me.columnUserID.Unique = true
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnBorrowersID}, true))
+            Me.columnUID.AutoIncrement = true
+            Me.columnUID.AutoIncrementSeed = -1
+            Me.columnUID.AutoIncrementStep = -1
+            Me.columnBorrowersID.AllowDBNull = false
+            Me.columnBorrowersID.Unique = true
+            Me.columnBorrowersID.MaxLength = 255
             Me.columnFullName.MaxLength = 255
             Me.columnContactNumber.MaxLength = 13
             Me.columnType.MaxLength = 255
@@ -1982,7 +2019,7 @@ Partial Public Class _borrowing_systemDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As _borrowing_systemDataSet = New _borrowing_systemDataSet()
+            Dim ds As _borrowing_systemDataSet1 = New _borrowing_systemDataSet1()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2061,9 +2098,24 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property BookID() As Integer
+        Public Property BID() As Integer
             Get
-                Return CType(Me(Me.tablebook.BookIDColumn),Integer)
+                Return CType(Me(Me.tablebook.BIDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablebook.BIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property BookID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablebook.BookIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BookID' in table 'book' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablebook.BookIDColumn) = value
@@ -2102,6 +2154,21 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Year() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablebook.YearColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Year' in table 'book' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablebook.YearColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ISBN() As String
             Get
                 Try 
@@ -2117,16 +2184,31 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Genre() As String
+        Public Property Type() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablebook.GenreColumn),String)
+                    Return CType(Me(Me.tablebook.TypeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Genre' in table 'book' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Type' in table 'book' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablebook.GenreColumn) = value
+                Me(Me.tablebook.TypeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Category() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablebook.CategoryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Category' in table 'book' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablebook.CategoryColumn) = value
             End Set
         End Property
         
@@ -2144,6 +2226,29 @@ Partial Public Class _borrowing_systemDataSet
                 Me(Me.tablebook.StatusColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property borrowRow() As borrowRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("borrowbook")),borrowRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("borrowbook"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsBookIDNull() As Boolean
+            Return Me.IsNull(Me.tablebook.BookIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetBookIDNull()
+            Me(Me.tablebook.BookIDColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -2171,6 +2276,18 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsYearNull() As Boolean
+            Return Me.IsNull(Me.tablebook.YearColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetYearNull()
+            Me(Me.tablebook.YearColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsISBNNull() As Boolean
             Return Me.IsNull(Me.tablebook.ISBNColumn)
         End Function
@@ -2183,14 +2300,26 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsGenreNull() As Boolean
-            Return Me.IsNull(Me.tablebook.GenreColumn)
+        Public Function IsTypeNull() As Boolean
+            Return Me.IsNull(Me.tablebook.TypeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetGenreNull()
-            Me(Me.tablebook.GenreColumn) = Global.System.Convert.DBNull
+        Public Sub SetTypeNull()
+            Me(Me.tablebook.TypeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsCategoryNull() As Boolean
+            Return Me.IsNull(Me.tablebook.CategoryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetCategoryNull()
+            Me(Me.tablebook.CategoryColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2204,86 +2333,61 @@ Partial Public Class _borrowing_systemDataSet
         Public Sub SetStatusNull()
             Me(Me.tablebook.StatusColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function _Getborrowed_booksRows() As _borrowed_booksRow()
-            If (Me.Table.ChildRelations("bookborrowed-books") Is Nothing) Then
-                Return New _borrowed_booksRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("bookborrowed-books")),_borrowed_booksRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class _borrowed_booksRow
+    Partial Public Class borrowRow
         Inherits Global.System.Data.DataRow
         
-        Private table_borrowed_books As _borrowed_booksDataTable
+        Private tableborrow As borrowDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.table_borrowed_books = CType(Me.Table,_borrowed_booksDataTable)
+            Me.tableborrow = CType(Me.Table,borrowDataTable)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property StudentOrFacultyID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.table_borrowed_books.StudentOrFacultyIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'StudentOrFacultyID' in table 'borrowed-books' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.table_borrowed_books.StudentOrFacultyIDColumn) = value
-            End Set
-        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property BorrowID() As Integer
             Get
-                Return CType(Me(Me.table_borrowed_books.BorrowIDColumn),Integer)
+                Return CType(Me(Me.tableborrow.BorrowIDColumn),Integer)
             End Get
             Set
-                Me(Me.table_borrowed_books.BorrowIDColumn) = value
+                Me(Me.tableborrow.BorrowIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property UserID() As Integer
+        Public Property BorrowersID() As String
             Get
                 Try 
-                    Return CType(Me(Me.table_borrowed_books.UserIDColumn),Integer)
+                    Return CType(Me(Me.tableborrow.BorrowersIDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'UserID' in table 'borrowed-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BorrowersID' in table 'borrow' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_borrowed_books.UserIDColumn) = value
+                Me(Me.tableborrow.BorrowersIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property BookID() As Integer
+        Public Property BookID() As String
             Get
                 Try 
-                    Return CType(Me(Me.table_borrowed_books.BookIDColumn),Integer)
+                    Return CType(Me(Me.tableborrow.BookIDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'BookID' in table 'borrowed-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BookID' in table 'borrow' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_borrowed_books.BookIDColumn) = value
+                Me(Me.tableborrow.BookIDColumn) = value
             End Set
         End Property
         
@@ -2292,13 +2396,13 @@ Partial Public Class _borrowing_systemDataSet
         Public Property BorrowDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.table_borrowed_books.BorrowDateColumn),Date)
+                    Return CType(Me(Me.tableborrow.BorrowDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'BorrowDate' in table 'borrowed-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BorrowDate' in table 'borrow' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_borrowed_books.BorrowDateColumn) = value
+                Me(Me.tableborrow.BorrowDateColumn) = value
             End Set
         End Property
         
@@ -2307,13 +2411,13 @@ Partial Public Class _borrowing_systemDataSet
         Public Property DueDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.table_borrowed_books.DueDateColumn),Date)
+                    Return CType(Me(Me.tableborrow.DueDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DueDate' in table 'borrowed-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DueDate' in table 'borrow' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_borrowed_books.DueDateColumn) = value
+                Me(Me.tableborrow.DueDateColumn) = value
             End Set
         End Property
         
@@ -2322,145 +2426,132 @@ Partial Public Class _borrowing_systemDataSet
         Public Property Status() As String
             Get
                 Try 
-                    Return CType(Me(Me.table_borrowed_books.StatusColumn),String)
+                    Return CType(Me(Me.tableborrow.StatusColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'borrowed-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'borrow' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_borrowed_books.StatusColumn) = value
+                Me(Me.tableborrow.StatusColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property bookRow() As bookRow
+        Public Property returnRow() As returnRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("bookborrowed-books")),bookRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("returnborrow")),returnRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("bookborrowed-books"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("returnborrow"))
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property _returned_booksRow() As _returned_booksRow
+        Public Property usersRow() As usersRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("returned-booksborrowed-books")),_returned_booksRow)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("usersborrow")),usersRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("returned-booksborrowed-books"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("usersborrow"))
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property usersRowParent() As usersRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("usersborrowed-books")),usersRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("usersborrowed-books"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsStudentOrFacultyIDNull() As Boolean
-            Return Me.IsNull(Me.table_borrowed_books.StudentOrFacultyIDColumn)
+        Public Function IsBorrowersIDNull() As Boolean
+            Return Me.IsNull(Me.tableborrow.BorrowersIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetStudentOrFacultyIDNull()
-            Me(Me.table_borrowed_books.StudentOrFacultyIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsUserIDNull() As Boolean
-            Return Me.IsNull(Me.table_borrowed_books.UserIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetUserIDNull()
-            Me(Me.table_borrowed_books.UserIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetBorrowersIDNull()
+            Me(Me.tableborrow.BorrowersIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsBookIDNull() As Boolean
-            Return Me.IsNull(Me.table_borrowed_books.BookIDColumn)
+            Return Me.IsNull(Me.tableborrow.BookIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetBookIDNull()
-            Me(Me.table_borrowed_books.BookIDColumn) = Global.System.Convert.DBNull
+            Me(Me.tableborrow.BookIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsBorrowDateNull() As Boolean
-            Return Me.IsNull(Me.table_borrowed_books.BorrowDateColumn)
+            Return Me.IsNull(Me.tableborrow.BorrowDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetBorrowDateNull()
-            Me(Me.table_borrowed_books.BorrowDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableborrow.BorrowDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsDueDateNull() As Boolean
-            Return Me.IsNull(Me.table_borrowed_books.DueDateColumn)
+            Return Me.IsNull(Me.tableborrow.DueDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetDueDateNull()
-            Me(Me.table_borrowed_books.DueDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableborrow.DueDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsStatusNull() As Boolean
-            Return Me.IsNull(Me.table_borrowed_books.StatusColumn)
+            Return Me.IsNull(Me.tableborrow.StatusColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetStatusNull()
-            Me(Me.table_borrowed_books.StatusColumn) = Global.System.Convert.DBNull
+            Me(Me.tableborrow.StatusColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function GetbookRows() As bookRow()
+            If (Me.Table.ChildRelations("borrowbook") Is Nothing) Then
+                Return New bookRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("borrowbook")),bookRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class librarianRow
+    Partial Public Class loginRow
         Inherits Global.System.Data.DataRow
         
-        Private tablelibrarian As librarianDataTable
+        Private tablelogin As loginDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablelibrarian = CType(Me.Table,librarianDataTable)
+            Me.tablelogin = CType(Me.Table,loginDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property LibrarianID() As Integer
+        Public Property LID() As Integer
             Get
-                Return CType(Me(Me.tablelibrarian.LibrarianIDColumn),Integer)
+                Return CType(Me(Me.tablelogin.LIDColumn),Integer)
             End Get
             Set
-                Me(Me.tablelibrarian.LibrarianIDColumn) = value
+                Me(Me.tablelogin.LIDColumn) = value
             End Set
         End Property
         
@@ -2469,13 +2560,13 @@ Partial Public Class _borrowing_systemDataSet
         Public Property Username() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablelibrarian.UsernameColumn),String)
+                    Return CType(Me(Me.tablelogin.UsernameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Username' in table 'librarian' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Username' in table 'login' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablelibrarian.UsernameColumn) = value
+                Me(Me.tablelogin.UsernameColumn) = value
             End Set
         End Property
         
@@ -2484,94 +2575,94 @@ Partial Public Class _borrowing_systemDataSet
         Public Property Password() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablelibrarian.PasswordColumn),String)
+                    Return CType(Me(Me.tablelogin.PasswordColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'librarian' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Password' in table 'login' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablelibrarian.PasswordColumn) = value
+                Me(Me.tablelogin.PasswordColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsUsernameNull() As Boolean
-            Return Me.IsNull(Me.tablelibrarian.UsernameColumn)
+            Return Me.IsNull(Me.tablelogin.UsernameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetUsernameNull()
-            Me(Me.tablelibrarian.UsernameColumn) = Global.System.Convert.DBNull
+            Me(Me.tablelogin.UsernameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsPasswordNull() As Boolean
-            Return Me.IsNull(Me.tablelibrarian.PasswordColumn)
+            Return Me.IsNull(Me.tablelogin.PasswordColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetPasswordNull()
-            Me(Me.tablelibrarian.PasswordColumn) = Global.System.Convert.DBNull
+            Me(Me.tablelogin.PasswordColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class _returned_booksRow
+    Partial Public Class returnRow
         Inherits Global.System.Data.DataRow
         
-        Private table_returned_books As _returned_booksDataTable
+        Private tablereturn As returnDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.table_returned_books = CType(Me.Table,_returned_booksDataTable)
+            Me.tablereturn = CType(Me.Table,returnDataTable)
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property StudentOrFacultyID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.table_returned_books.StudentOrFacultyIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'StudentOrFacultyID' in table 'returned-books' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.table_returned_books.StudentOrFacultyIDColumn) = value
-            End Set
-        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ReturnID() As Integer
             Get
-                Return CType(Me(Me.table_returned_books.ReturnIDColumn),Integer)
+                Return CType(Me(Me.tablereturn.ReturnIDColumn),Integer)
             End Get
             Set
-                Me(Me.table_returned_books.ReturnIDColumn) = value
+                Me(Me.tablereturn.ReturnIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property BorrowID() As Integer
+        Public Property BorrowersID() As String
             Get
                 Try 
-                    Return CType(Me(Me.table_returned_books.BorrowIDColumn),Integer)
+                    Return CType(Me(Me.tablereturn.BorrowersIDColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'BorrowID' in table 'returned-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BorrowersID' in table 'return' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_returned_books.BorrowIDColumn) = value
+                Me(Me.tablereturn.BorrowersIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property BorrowID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereturn.BorrowIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BorrowID' in table 'return' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereturn.BorrowIDColumn) = value
             End Set
         End Property
         
@@ -2580,13 +2671,13 @@ Partial Public Class _borrowing_systemDataSet
         Public Property ReturnDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.table_returned_books.ReturnDateColumn),Date)
+                    Return CType(Me(Me.tablereturn.ReturnDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ReturnDate' in table 'returned-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ReturnDate' in table 'return' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_returned_books.ReturnDateColumn) = value
+                Me(Me.tablereturn.ReturnDateColumn) = value
             End Set
         End Property
         
@@ -2595,71 +2686,71 @@ Partial Public Class _borrowing_systemDataSet
         Public Property Condition() As String
             Get
                 Try 
-                    Return CType(Me(Me.table_returned_books.ConditionColumn),String)
+                    Return CType(Me(Me.tablereturn.ConditionColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Condition' in table 'returned-books' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Condition' in table 'return' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.table_returned_books.ConditionColumn) = value
+                Me(Me.tablereturn.ConditionColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsStudentOrFacultyIDNull() As Boolean
-            Return Me.IsNull(Me.table_returned_books.StudentOrFacultyIDColumn)
+        Public Function IsBorrowersIDNull() As Boolean
+            Return Me.IsNull(Me.tablereturn.BorrowersIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetStudentOrFacultyIDNull()
-            Me(Me.table_returned_books.StudentOrFacultyIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetBorrowersIDNull()
+            Me(Me.tablereturn.BorrowersIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsBorrowIDNull() As Boolean
-            Return Me.IsNull(Me.table_returned_books.BorrowIDColumn)
+            Return Me.IsNull(Me.tablereturn.BorrowIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetBorrowIDNull()
-            Me(Me.table_returned_books.BorrowIDColumn) = Global.System.Convert.DBNull
+            Me(Me.tablereturn.BorrowIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsReturnDateNull() As Boolean
-            Return Me.IsNull(Me.table_returned_books.ReturnDateColumn)
+            Return Me.IsNull(Me.tablereturn.ReturnDateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetReturnDateNull()
-            Me(Me.table_returned_books.ReturnDateColumn) = Global.System.Convert.DBNull
+            Me(Me.tablereturn.ReturnDateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsConditionNull() As Boolean
-            Return Me.IsNull(Me.table_returned_books.ConditionColumn)
+            Return Me.IsNull(Me.tablereturn.ConditionColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetConditionNull()
-            Me(Me.table_returned_books.ConditionColumn) = Global.System.Convert.DBNull
+            Me(Me.tablereturn.ConditionColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function _Getborrowed_booksRows() As _borrowed_booksRow()
-            If (Me.Table.ChildRelations("returned-booksborrowed-books") Is Nothing) Then
-                Return New _borrowed_booksRow(-1) {}
+        Public Function GetborrowRows() As borrowRow()
+            If (Me.Table.ChildRelations("returnborrow") Is Nothing) Then
+                Return New borrowRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("returned-booksborrowed-books")),_borrowed_booksRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("returnborrow")),borrowRow())
             End If
         End Function
     End Class
@@ -2681,27 +2772,27 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property StudentOrFacultyID() As String
+        Public Property UID() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableusers.StudentOrFacultyIDColumn),String)
+                    Return CType(Me(Me.tableusers.UIDColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'StudentOrFacultyID' in table 'users' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UID' in table 'users' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableusers.StudentOrFacultyIDColumn) = value
+                Me(Me.tableusers.UIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property UserID() As Integer
+        Public Property BorrowersID() As String
             Get
-                Return CType(Me(Me.tableusers.UserIDColumn),Integer)
+                Return CType(Me(Me.tableusers.BorrowersIDColumn),String)
             End Get
             Set
-                Me(Me.tableusers.UserIDColumn) = value
+                Me(Me.tableusers.BorrowersIDColumn) = value
             End Set
         End Property
         
@@ -2752,14 +2843,14 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsStudentOrFacultyIDNull() As Boolean
-            Return Me.IsNull(Me.tableusers.StudentOrFacultyIDColumn)
+        Public Function IsUIDNull() As Boolean
+            Return Me.IsNull(Me.tableusers.UIDColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetStudentOrFacultyIDNull()
-            Me(Me.tableusers.StudentOrFacultyIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetUIDNull()
+            Me(Me.tableusers.UIDColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2800,11 +2891,11 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function _Getborrowed_booksRows() As _borrowed_booksRow()
-            If (Me.Table.ChildRelations("usersborrowed-books") Is Nothing) Then
-                Return New _borrowed_booksRow(-1) {}
+        Public Function GetborrowRows() As borrowRow()
+            If (Me.Table.ChildRelations("usersborrow") Is Nothing) Then
+                Return New borrowRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("usersborrowed-books")),_borrowed_booksRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("usersborrow")),borrowRow())
             End If
         End Function
     End Class
@@ -2849,16 +2940,16 @@ Partial Public Class _borrowing_systemDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class _borrowed_booksRowChangeEvent
+    Public Class borrowRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As _borrowed_booksRow
+        Private eventRow As borrowRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As _borrowed_booksRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As borrowRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2866,7 +2957,7 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As _borrowed_booksRow
+        Public ReadOnly Property Row() As borrowRow
             Get
                 Return Me.eventRow
             End Get
@@ -2885,16 +2976,16 @@ Partial Public Class _borrowing_systemDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class librarianRowChangeEvent
+    Public Class loginRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As librarianRow
+        Private eventRow As loginRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As librarianRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As loginRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2902,7 +2993,7 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As librarianRow
+        Public ReadOnly Property Row() As loginRow
             Get
                 Return Me.eventRow
             End Get
@@ -2921,16 +3012,16 @@ Partial Public Class _borrowing_systemDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class _returned_booksRowChangeEvent
+    Public Class returnRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As _returned_booksRow
+        Private eventRow As returnRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As _returned_booksRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As returnRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2938,7 +3029,7 @@ Partial Public Class _borrowing_systemDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As _returned_booksRow
+        Public ReadOnly Property Row() As returnRow
             Get
                 Return Me.eventRow
             End Get
@@ -2990,7 +3081,7 @@ Partial Public Class _borrowing_systemDataSet
     End Class
 End Class
 
-Namespace _borrowing_systemDataSetTableAdapters
+Namespace _borrowing_systemDataSet1TableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -3119,63 +3210,88 @@ Namespace _borrowing_systemDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "book"
+            tableMapping.ColumnMappings.Add("BID", "BID")
             tableMapping.ColumnMappings.Add("BookID", "BookID")
             tableMapping.ColumnMappings.Add("Title", "Title")
             tableMapping.ColumnMappings.Add("Author", "Author")
+            tableMapping.ColumnMappings.Add("Year", "Year")
             tableMapping.ColumnMappings.Add("ISBN", "ISBN")
-            tableMapping.ColumnMappings.Add("Genre", "Genre")
+            tableMapping.ColumnMappings.Add("Type", "Type")
+            tableMapping.ColumnMappings.Add("Category", "Category")
             tableMapping.ColumnMappings.Add("Status", "Status")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `book` WHERE ((`BookID` = ?) AND ((? = 1 AND `Title` IS NULL) OR (`Ti"& _ 
-                "tle` = ?)) AND ((? = 1 AND `Author` IS NULL) OR (`Author` = ?)) AND ((? = 1 AND "& _ 
-                "`ISBN` IS NULL) OR (`ISBN` = ?)) AND ((? = 1 AND `Genre` IS NULL) OR (`Genre` = "& _ 
-                "?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `book` WHERE ((`BID` = ?) AND ((? = 1 AND `BookID` IS NULL) OR (`Book"& _ 
+                "ID` = ?)) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ((? = 1 AND `Au"& _ 
+                "thor` IS NULL) OR (`Author` = ?)) AND ((? = 1 AND `Year` IS NULL) OR (`Year` = ?"& _ 
+                ")) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` = ?)) AND ((? = 1 AND `Type` IS NU"& _ 
+                "LL) OR (`Type` = ?)) AND ((? = 1 AND `Category` IS NULL) OR (`Category` = ?)) AN"& _ 
+                "D ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Title", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Author", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Author", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Author", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Author", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Year", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Year", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Genre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Type", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Category", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Category", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Category", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Category", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `book` (`Title`, `Author`, `ISBN`, `Genre`, `Status`) VALUES (?, ?, ?"& _ 
-                ", ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `book` (`BookID`, `Title`, `Author`, `Year`, `ISBN`, `Type`, `Categor"& _ 
+                "y`, `Status`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Author", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Author", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Year", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Category", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Category", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `book` SET `Title` = ?, `Author` = ?, `ISBN` = ?, `Genre` = ?, `Status` = "& _ 
-                "? WHERE ((`BookID` = ?) AND ((? = 1 AND `Title` IS NULL) OR (`Title` = ?)) AND ("& _ 
-                "(? = 1 AND `Author` IS NULL) OR (`Author` = ?)) AND ((? = 1 AND `ISBN` IS NULL) "& _ 
-                "OR (`ISBN` = ?)) AND ((? = 1 AND `Genre` IS NULL) OR (`Genre` = ?)) AND ((? = 1 "& _ 
-                "AND `Status` IS NULL) OR (`Status` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `book` SET `BookID` = ?, `Title` = ?, `Author` = ?, `Year` = ?, `ISBN` = ?"& _ 
+                ", `Type` = ?, `Category` = ?, `Status` = ? WHERE ((`BID` = ?) AND ((? = 1 AND `B"& _ 
+                "ookID` IS NULL) OR (`BookID` = ?)) AND ((? = 1 AND `Title` IS NULL) OR (`Title` "& _ 
+                "= ?)) AND ((? = 1 AND `Author` IS NULL) OR (`Author` = ?)) AND ((? = 1 AND `Year"& _ 
+                "` IS NULL) OR (`Year` = ?)) AND ((? = 1 AND `ISBN` IS NULL) OR (`ISBN` = ?)) AND"& _ 
+                " ((? = 1 AND `Type` IS NULL) OR (`Type` = ?)) AND ((? = 1 AND `Category` IS NULL"& _ 
+                ") OR (`Category` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Author", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Author", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Year", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Category", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Category", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Title", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Title", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Title", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Author", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Author", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Author", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Author", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Year", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Year", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Year", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ISBN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ISBN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ISBN", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Genre", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Genre", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Genre", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Type", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Category", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Category", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Category", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Category", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -3193,7 +3309,8 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT BookID, Title, Author, ISBN, Genre, Status FROM book"
+            Me._commandCollection(0).CommandText = "SELECT BID, BookID, Title, Author, [Year], ISBN, Type, Category, Status FROM book"& _ 
+                ""
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3201,7 +3318,7 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet.bookDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet1.bookDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -3214,9 +3331,9 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet.bookDataTable
+        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet1.bookDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As _borrowing_systemDataSet.bookDataTable = New _borrowing_systemDataSet.bookDataTable()
+            Dim dataTable As _borrowing_systemDataSet1.bookDataTable = New _borrowing_systemDataSet1.bookDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -3224,14 +3341,14 @@ Namespace _borrowing_systemDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet.bookDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet1.bookDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet1) As Integer
             Return Me.Adapter.Update(dataSet, "book")
         End Function
         
@@ -3253,35 +3370,566 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_BookID As Integer, ByVal Original_Title As String, ByVal Original_Author As String, ByVal Original_ISBN As String, ByVal Original_Genre As String, ByVal Original_Status As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_BookID,Integer)
-            If (Original_Title Is Nothing) Then
+        Public Overloads Overridable Function Delete(ByVal Original_BID As Integer, ByVal Original_BookID As String, ByVal Original_Title As String, ByVal Original_Author As String, ByVal Original_Year As String, ByVal Original_ISBN As String, ByVal Original_Type As String, ByVal Original_Category As String, ByVal Original_Status As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_BID,Integer)
+            If (Original_BookID Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Title,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_BookID,String)
             End If
-            If (Original_Author Is Nothing) Then
+            If (Original_Title Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Author,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Title,String)
             End If
-            If (Original_ISBN Is Nothing) Then
+            If (Original_Author Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_ISBN,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Author,String)
             End If
-            If (Original_Genre Is Nothing) Then
+            If (Original_Year Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Genre,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Year,String)
+            End If
+            If (Original_ISBN Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ISBN,String)
+            End If
+            If (Original_Type Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Type,String)
+            End If
+            If (Original_Category Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Category,String)
+            End If
+            If (Original_Status Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Status,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal BookID As String, ByVal Title As String, ByVal Author As String, ByVal Year As String, ByVal ISBN As String, ByVal Type As String, ByVal Category As String, ByVal Status As String) As Integer
+            If (BookID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(BookID,String)
+            End If
+            If (Title Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Title,String)
+            End If
+            If (Author Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Author,String)
+            End If
+            If (Year Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Year,String)
+            End If
+            If (ISBN Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ISBN,String)
+            End If
+            If (Type Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Type,String)
+            End If
+            If (Category Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Category,String)
+            End If
+            If (Status Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Status,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal BookID As String,  _
+                    ByVal Title As String,  _
+                    ByVal Author As String,  _
+                    ByVal Year As String,  _
+                    ByVal ISBN As String,  _
+                    ByVal Type As String,  _
+                    ByVal Category As String,  _
+                    ByVal Status As String,  _
+                    ByVal Original_BID As Integer,  _
+                    ByVal Original_BookID As String,  _
+                    ByVal Original_Title As String,  _
+                    ByVal Original_Author As String,  _
+                    ByVal Original_Year As String,  _
+                    ByVal Original_ISBN As String,  _
+                    ByVal Original_Type As String,  _
+                    ByVal Original_Category As String,  _
+                    ByVal Original_Status As String) As Integer
+            If (BookID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BookID,String)
+            End If
+            If (Title Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Title,String)
+            End If
+            If (Author Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Author,String)
+            End If
+            If (Year Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Year,String)
+            End If
+            If (ISBN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ISBN,String)
+            End If
+            If (Type Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Type,String)
+            End If
+            If (Category Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Category,String)
+            End If
+            If (Status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Status,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_BID,Integer)
+            If (Original_BookID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_BookID,String)
+            End If
+            If (Original_Title Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Title,String)
+            End If
+            If (Original_Author Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Author,String)
+            End If
+            If (Original_Year Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Year,String)
+            End If
+            If (Original_ISBN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ISBN,String)
+            End If
+            If (Original_Type Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Type,String)
+            End If
+            If (Original_Category Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Category,String)
+            End If
+            If (Original_Status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Status,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class borrowTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+        
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+        
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+        
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "borrow"
+            tableMapping.ColumnMappings.Add("BorrowID", "BorrowID")
+            tableMapping.ColumnMappings.Add("BorrowersID", "BorrowersID")
+            tableMapping.ColumnMappings.Add("BookID", "BookID")
+            tableMapping.ColumnMappings.Add("BorrowDate", "BorrowDate")
+            tableMapping.ColumnMappings.Add("DueDate", "DueDate")
+            tableMapping.ColumnMappings.Add("Status", "Status")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `borrow` WHERE ((`BorrowID` = ?) AND ((? = 1 AND `BorrowersID` IS NUL"& _ 
+                "L) OR (`BorrowersID` = ?)) AND ((? = 1 AND `BookID` IS NULL) OR (`BookID` = ?)) "& _ 
+                "AND ((? = 1 AND `BorrowDate` IS NULL) OR (`BorrowDate` = ?)) AND ((? = 1 AND `Du"& _ 
+                "eDate` IS NULL) OR (`DueDate` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Statu"& _ 
+                "s` = ?)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowersID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DueDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `borrow` (`BorrowersID`, `BookID`, `BorrowDate`, `DueDate`, `Status`)"& _ 
+                " VALUES (?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `borrow` SET `BorrowersID` = ?, `BookID` = ?, `BorrowDate` = ?, `DueDate` "& _ 
+                "= ?, `Status` = ? WHERE ((`BorrowID` = ?) AND ((? = 1 AND `BorrowersID` IS NULL)"& _ 
+                " OR (`BorrowersID` = ?)) AND ((? = 1 AND `BookID` IS NULL) OR (`BookID` = ?)) AN"& _ 
+                "D ((? = 1 AND `BorrowDate` IS NULL) OR (`BorrowDate` = ?)) AND ((? = 1 AND `DueD"& _ 
+                "ate` IS NULL) OR (`DueDate` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status`"& _ 
+                " = ?)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowersID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DueDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.borrowing_systemConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT BorrowID, BorrowersID, BookID, BorrowDate, DueDate, Status FROM borrow"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet1.borrowDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet1.borrowDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As _borrowing_systemDataSet1.borrowDataTable = New _borrowing_systemDataSet1.borrowDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet1.borrowDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "borrow")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_BorrowID As Integer, ByVal Original_BorrowersID As String, ByVal Original_BookID As String, ByVal Original_BorrowDate As Global.System.Nullable(Of Date), ByVal Original_DueDate As Global.System.Nullable(Of Date), ByVal Original_Status As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_BorrowID,Integer)
+            If (Original_BorrowersID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_BorrowersID,String)
+            End If
+            If (Original_BookID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_BookID,String)
+            End If
+            If (Original_BorrowDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_BorrowDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DueDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_DueDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_Status Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
@@ -3309,26 +3957,26 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Title As String, ByVal Author As String, ByVal ISBN As String, ByVal Genre As String, ByVal Status As String) As Integer
-            If (Title Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal BorrowersID As String, ByVal BookID As String, ByVal BorrowDate As Global.System.Nullable(Of Date), ByVal DueDate As Global.System.Nullable(Of Date), ByVal Status As String) As Integer
+            If (BorrowersID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Title,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(BorrowersID,String)
             End If
-            If (Author Is Nothing) Then
+            If (BookID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Author,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(BookID,String)
             End If
-            If (ISBN Is Nothing) Then
+            If (BorrowDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(BorrowDate.Value,Date)
+            Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(ISBN,String)
             End If
-            If (Genre Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            If (DueDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(DueDate.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Genre,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             If (Status Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
@@ -3354,60 +4002,60 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Title As String, ByVal Author As String, ByVal ISBN As String, ByVal Genre As String, ByVal Status As String, ByVal Original_BookID As Integer, ByVal Original_Title As String, ByVal Original_Author As String, ByVal Original_ISBN As String, ByVal Original_Genre As String, ByVal Original_Status As String) As Integer
-            If (Title Is Nothing) Then
+        Public Overloads Overridable Function Update(ByVal BorrowersID As String, ByVal BookID As String, ByVal BorrowDate As Global.System.Nullable(Of Date), ByVal DueDate As Global.System.Nullable(Of Date), ByVal Status As String, ByVal Original_BorrowID As Integer, ByVal Original_BorrowersID As String, ByVal Original_BookID As String, ByVal Original_BorrowDate As Global.System.Nullable(Of Date), ByVal Original_DueDate As Global.System.Nullable(Of Date), ByVal Original_Status As String) As Integer
+            If (BorrowersID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Title,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BorrowersID,String)
             End If
-            If (Author Is Nothing) Then
+            If (BookID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Author,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BookID,String)
             End If
-            If (ISBN Is Nothing) Then
+            If (BorrowDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(BorrowDate.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ISBN,String)
             End If
-            If (Genre Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            If (DueDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DueDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Genre,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
             If (Status Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Status,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_BookID,Integer)
-            If (Original_Title Is Nothing) Then
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_BorrowID,Integer)
+            If (Original_BorrowersID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Title,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_BorrowersID,String)
             End If
-            If (Original_Author Is Nothing) Then
+            If (Original_BookID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Author,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_BookID,String)
             End If
-            If (Original_ISBN Is Nothing) Then
+            If (Original_BorrowDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_BorrowDate.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ISBN,String)
             End If
-            If (Original_Genre Is Nothing) Then
+            If (Original_DueDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_DueDate.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Genre,String)
             End If
             If (Original_Status Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
@@ -3441,7 +4089,7 @@ Namespace _borrowing_systemDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class borrowed_booksTableAdapter
+    Partial Public Class loginTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -3558,513 +4206,36 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "borrowed-books"
-            tableMapping.ColumnMappings.Add("StudentOrFacultyID", "StudentOrFacultyID")
-            tableMapping.ColumnMappings.Add("BorrowID", "BorrowID")
-            tableMapping.ColumnMappings.Add("UserID", "UserID")
-            tableMapping.ColumnMappings.Add("BookID", "BookID")
-            tableMapping.ColumnMappings.Add("BorrowDate", "BorrowDate")
-            tableMapping.ColumnMappings.Add("DueDate", "DueDate")
-            tableMapping.ColumnMappings.Add("Status", "Status")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `borrowed-books` WHERE (((? = 1 AND `StudentOrFacultyID` IS NULL) OR "& _ 
-                "(`StudentOrFacultyID` = ?)) AND (`BorrowID` = ?) AND ((? = 1 AND `UserID` IS NUL"& _ 
-                "L) OR (`UserID` = ?)) AND ((? = 1 AND `BookID` IS NULL) OR (`BookID` = ?)) AND ("& _ 
-                "(? = 1 AND `BorrowDate` IS NULL) OR (`BorrowDate` = ?)) AND ((? = 1 AND `DueDate"& _ 
-                "` IS NULL) OR (`DueDate` = ?)) AND ((? = 1 AND `Status` IS NULL) OR (`Status` = "& _ 
-                "?)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DueDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `borrowed-books` (`StudentOrFacultyID`, `UserID`, `BookID`, `BorrowDa"& _ 
-                "te`, `DueDate`, `Status`) VALUES (?, ?, ?, ?, ?, ?)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `borrowed-books` SET `StudentOrFacultyID` = ?, `UserID` = ?, `BookID` = ?,"& _ 
-                " `BorrowDate` = ?, `DueDate` = ?, `Status` = ? WHERE (((? = 1 AND `StudentOrFacu"& _ 
-                "ltyID` IS NULL) OR (`StudentOrFacultyID` = ?)) AND (`BorrowID` = ?) AND ((? = 1 "& _ 
-                "AND `UserID` IS NULL) OR (`UserID` = ?)) AND ((? = 1 AND `BookID` IS NULL) OR (`"& _ 
-                "BookID` = ?)) AND ((? = 1 AND `BorrowDate` IS NULL) OR (`BorrowDate` = ?)) AND ("& _ 
-                "(? = 1 AND `DueDate` IS NULL) OR (`DueDate` = ?)) AND ((? = 1 AND `Status` IS NU"& _ 
-                "LL) OR (`Status` = ?)))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BookID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DueDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DueDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DueDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Status", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Status", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Status", Global.System.Data.DataRowVersion.Original, false, Nothing))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.borrowing_systemConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT StudentOrFacultyID, BorrowID, UserID, BookID, BorrowDate, DueDate, Status "& _ 
-                "FROM [borrowed-books]"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet._borrowed_booksDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet._borrowed_booksDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As _borrowing_systemDataSet._borrowed_booksDataTable = New _borrowing_systemDataSet._borrowed_booksDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet._borrowed_booksDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "borrowed-books")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_StudentOrFacultyID As String, ByVal Original_BorrowID As Integer, ByVal Original_UserID As Global.System.Nullable(Of Integer), ByVal Original_BookID As Global.System.Nullable(Of Integer), ByVal Original_BorrowDate As Global.System.Nullable(Of Date), ByVal Original_DueDate As Global.System.Nullable(Of Date), ByVal Original_Status As String) As Integer
-            If (Original_StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_StudentOrFacultyID,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_BorrowID,Integer)
-            If (Original_UserID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_UserID.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BookID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_BookID.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BorrowDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_BorrowDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DueDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_DueDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Status Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Status,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal StudentOrFacultyID As String, ByVal UserID As Global.System.Nullable(Of Integer), ByVal BookID As Global.System.Nullable(Of Integer), ByVal BorrowDate As Global.System.Nullable(Of Date), ByVal DueDate As Global.System.Nullable(Of Date), ByVal Status As String) As Integer
-            If (StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(StudentOrFacultyID,String)
-            End If
-            If (UserID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(UserID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (BookID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(BookID.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (BorrowDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(BorrowDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (DueDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(DueDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Status Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Status,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal StudentOrFacultyID As String, ByVal UserID As Global.System.Nullable(Of Integer), ByVal BookID As Global.System.Nullable(Of Integer), ByVal BorrowDate As Global.System.Nullable(Of Date), ByVal DueDate As Global.System.Nullable(Of Date), ByVal Status As String, ByVal Original_StudentOrFacultyID As String, ByVal Original_BorrowID As Integer, ByVal Original_UserID As Global.System.Nullable(Of Integer), ByVal Original_BookID As Global.System.Nullable(Of Integer), ByVal Original_BorrowDate As Global.System.Nullable(Of Date), ByVal Original_DueDate As Global.System.Nullable(Of Date), ByVal Original_Status As String) As Integer
-            If (StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(StudentOrFacultyID,String)
-            End If
-            If (UserID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(UserID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (BookID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(BookID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (BorrowDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(BorrowDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (DueDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(DueDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Status Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Status,String)
-            End If
-            If (Original_StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_StudentOrFacultyID,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_BorrowID,Integer)
-            If (Original_UserID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_UserID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BookID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_BookID.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_BorrowDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_BorrowDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DueDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_DueDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Status Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Status,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class librarianTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
-        
-        Private _connection As Global.System.Data.OleDb.OleDbConnection
-        
-        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
-        
-        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.OleDb.OleDbCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "librarian"
-            tableMapping.ColumnMappings.Add("LibrarianID", "LibrarianID")
+            tableMapping.DataSetTable = "login"
+            tableMapping.ColumnMappings.Add("LID", "LID")
             tableMapping.ColumnMappings.Add("Username", "Username")
             tableMapping.ColumnMappings.Add("Password", "Password")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `librarian` WHERE ((`LibrarianID` = ?) AND ((? = 1 AND `Username` IS "& _ 
-                "NULL) OR (`Username` = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = "& _ 
-                "?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `login` WHERE ((`LID` = ?) AND ((? = 1 AND `Username` IS NULL) OR (`U"& _ 
+                "sername` = ?)) AND ((? = 1 AND `Password` IS NULL) OR (`Password` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_LibrarianID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LibrarianID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_LID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Password", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `librarian` (`Username`, `Password`) VALUES (?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `login` (`Username`, `Password`) VALUES (?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `librarian` SET `Username` = ?, `Password` = ? WHERE ((`LibrarianID` = ?) "& _ 
-                "AND ((? = 1 AND `Username` IS NULL) OR (`Username` = ?)) AND ((? = 1 AND `Passwo"& _ 
-                "rd` IS NULL) OR (`Password` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `login` SET `Username` = ?, `Password` = ? WHERE ((`LID` = ?) AND ((? = 1 "& _ 
+                "AND `Username` IS NULL) OR (`Username` = ?)) AND ((? = 1 AND `Password` IS NULL)"& _ 
+                " OR (`Password` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_LibrarianID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LibrarianID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_LID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Password", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Password", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4084,7 +4255,7 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT LibrarianID, Username, [Password] FROM librarian"
+            Me._commandCollection(0).CommandText = "SELECT LID, Username, [Password] FROM login"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4092,7 +4263,7 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet.librarianDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet1.loginDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -4105,9 +4276,9 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet.librarianDataTable
+        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet1.loginDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As _borrowing_systemDataSet.librarianDataTable = New _borrowing_systemDataSet.librarianDataTable()
+            Dim dataTable As _borrowing_systemDataSet1.loginDataTable = New _borrowing_systemDataSet1.loginDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -4115,15 +4286,15 @@ Namespace _borrowing_systemDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet.librarianDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet1.loginDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "librarian")
+        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "login")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4144,8 +4315,8 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_LibrarianID As Integer, ByVal Original_Username As String, ByVal Original_Password As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_LibrarianID,Integer)
+        Public Overloads Overridable Function Delete(ByVal Original_LID As Integer, ByVal Original_Username As String, ByVal Original_Password As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_LID,Integer)
             If (Original_Username Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
@@ -4209,7 +4380,7 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Username As String, ByVal Password As String, ByVal Original_LibrarianID As Integer, ByVal Original_Username As String, ByVal Original_Password As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Username As String, ByVal Password As String, ByVal Original_LID As Integer, ByVal Original_Username As String, ByVal Original_Password As String) As Integer
             If (Username Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -4220,7 +4391,7 @@ Namespace _borrowing_systemDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Password,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_LibrarianID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_LID,Integer)
             If (Original_Username Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
@@ -4260,7 +4431,7 @@ Namespace _borrowing_systemDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class returned_booksTableAdapter
+    Partial Public Class returnTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -4377,55 +4548,55 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "returned-books"
-            tableMapping.ColumnMappings.Add("StudentOrFacultyID", "StudentOrFacultyID")
+            tableMapping.DataSetTable = "return"
             tableMapping.ColumnMappings.Add("ReturnID", "ReturnID")
+            tableMapping.ColumnMappings.Add("BorrowersID", "BorrowersID")
             tableMapping.ColumnMappings.Add("BorrowID", "BorrowID")
             tableMapping.ColumnMappings.Add("ReturnDate", "ReturnDate")
             tableMapping.ColumnMappings.Add("Condition", "Condition")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `returned-books` WHERE (((? = 1 AND `StudentOrFacultyID` IS NULL) OR "& _ 
-                "(`StudentOrFacultyID` = ?)) AND (`ReturnID` = ?) AND ((? = 1 AND `BorrowID` IS N"& _ 
-                "ULL) OR (`BorrowID` = ?)) AND ((? = 1 AND `ReturnDate` IS NULL) OR (`ReturnDate`"& _ 
-                " = ?)) AND ((? = 1 AND `Condition` IS NULL) OR (`Condition` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `return` WHERE ((`ReturnID` = ?) AND ((? = 1 AND `BorrowersID` IS NUL"& _ 
+                "L) OR (`BorrowersID` = ?)) AND ((? = 1 AND `BorrowID` IS NULL) OR (`BorrowID` = "& _ 
+                "?)) AND ((? = 1 AND `ReturnDate` IS NULL) OR (`ReturnDate` = ?)) AND ((? = 1 AND"& _ 
+                " `Condition` IS NULL) OR (`Condition` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ReturnID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowersID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ReturnDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ReturnDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Condition", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Condition", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Condition", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Condition", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `returned-books` (`StudentOrFacultyID`, `BorrowID`, `ReturnDate`, `Co"& _ 
-                "ndition`) VALUES (?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `return` (`BorrowersID`, `BorrowID`, `ReturnDate`, `Condition`) VALUE"& _ 
+                "S (?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ReturnDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Condition", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Condition", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `returned-books` SET `StudentOrFacultyID` = ?, `BorrowID` = ?, `ReturnDate"& _ 
-                "` = ?, `Condition` = ? WHERE (((? = 1 AND `StudentOrFacultyID` IS NULL) OR (`Stu"& _ 
-                "dentOrFacultyID` = ?)) AND (`ReturnID` = ?) AND ((? = 1 AND `BorrowID` IS NULL) "& _ 
-                "OR (`BorrowID` = ?)) AND ((? = 1 AND `ReturnDate` IS NULL) OR (`ReturnDate` = ?)"& _ 
-                ") AND ((? = 1 AND `Condition` IS NULL) OR (`Condition` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `return` SET `BorrowersID` = ?, `BorrowID` = ?, `ReturnDate` = ?, `Conditi"& _ 
+                "on` = ? WHERE ((`ReturnID` = ?) AND ((? = 1 AND `BorrowersID` IS NULL) OR (`Borr"& _ 
+                "owersID` = ?)) AND ((? = 1 AND `BorrowID` IS NULL) OR (`BorrowID` = ?)) AND ((? "& _ 
+                "= 1 AND `ReturnDate` IS NULL) OR (`ReturnDate` = ?)) AND ((? = 1 AND `Condition`"& _ 
+                " IS NULL) OR (`Condition` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ReturnDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Condition", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Condition", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ReturnID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowersID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ReturnDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ReturnDate", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ReturnDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Condition", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Condition", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4445,8 +4616,7 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT StudentOrFacultyID, ReturnID, BorrowID, ReturnDate, Condition FROM [return"& _ 
-                "ed-books]"
+            Me._commandCollection(0).CommandText = "SELECT ReturnID, BorrowersID, BorrowID, ReturnDate, Condition FROM return"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4454,7 +4624,7 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet._returned_booksDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet1.returnDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -4467,9 +4637,9 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet._returned_booksDataTable
+        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet1.returnDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As _borrowing_systemDataSet._returned_booksDataTable = New _borrowing_systemDataSet._returned_booksDataTable()
+            Dim dataTable As _borrowing_systemDataSet1.returnDataTable = New _borrowing_systemDataSet1.returnDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -4477,15 +4647,15 @@ Namespace _borrowing_systemDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet._returned_booksDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet1.returnDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "returned-books")
+        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "return")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4506,21 +4676,21 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_StudentOrFacultyID As String, ByVal Original_ReturnID As Integer, ByVal Original_BorrowID As Global.System.Nullable(Of Integer), ByVal Original_ReturnDate As Global.System.Nullable(Of Date), ByVal Original_Condition As String) As Integer
-            If (Original_StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
+        Public Overloads Overridable Function Delete(ByVal Original_ReturnID As Integer, ByVal Original_BorrowersID As String, ByVal Original_BorrowID As String, ByVal Original_ReturnDate As Global.System.Nullable(Of Date), ByVal Original_Condition As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ReturnID,Integer)
+            If (Original_BorrowersID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_StudentOrFacultyID,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_BorrowersID,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ReturnID,Integer)
-            If (Original_BorrowID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_BorrowID.Value,Integer)
-            Else
+            If (Original_BorrowID Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_BorrowID,String)
             End If
             If (Original_ReturnDate.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
@@ -4555,16 +4725,16 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal StudentOrFacultyID As String, ByVal BorrowID As Global.System.Nullable(Of Integer), ByVal ReturnDate As Global.System.Nullable(Of Date), ByVal Condition As String) As Integer
-            If (StudentOrFacultyID Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal BorrowersID As String, ByVal BorrowID As String, ByVal ReturnDate As Global.System.Nullable(Of Date), ByVal Condition As String) As Integer
+            If (BorrowersID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(StudentOrFacultyID,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(BorrowersID,String)
             End If
-            If (BorrowID.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(BorrowID.Value,Integer)
-            Else
+            If (BorrowID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(BorrowID,String)
             End If
             If (ReturnDate.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(ReturnDate.Value,Date)
@@ -4595,16 +4765,16 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal StudentOrFacultyID As String, ByVal BorrowID As Global.System.Nullable(Of Integer), ByVal ReturnDate As Global.System.Nullable(Of Date), ByVal Condition As String, ByVal Original_StudentOrFacultyID As String, ByVal Original_ReturnID As Integer, ByVal Original_BorrowID As Global.System.Nullable(Of Integer), ByVal Original_ReturnDate As Global.System.Nullable(Of Date), ByVal Original_Condition As String) As Integer
-            If (StudentOrFacultyID Is Nothing) Then
+        Public Overloads Overridable Function Update(ByVal BorrowersID As String, ByVal BorrowID As String, ByVal ReturnDate As Global.System.Nullable(Of Date), ByVal Condition As String, ByVal Original_ReturnID As Integer, ByVal Original_BorrowersID As String, ByVal Original_BorrowID As String, ByVal Original_ReturnDate As Global.System.Nullable(Of Date), ByVal Original_Condition As String) As Integer
+            If (BorrowersID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(StudentOrFacultyID,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BorrowersID,String)
             End If
-            If (BorrowID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BorrowID.Value,Integer)
-            Else
+            If (BorrowID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BorrowID,String)
             End If
             If (ReturnDate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ReturnDate.Value,Date)
@@ -4616,20 +4786,20 @@ Namespace _borrowing_systemDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Condition,String)
             End If
-            If (Original_StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_ReturnID,Integer)
+            If (Original_BorrowersID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_StudentOrFacultyID,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_BorrowersID,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_ReturnID,Integer)
-            If (Original_BorrowID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_BorrowID.Value,Integer)
-            Else
+            If (Original_BorrowID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_BorrowID,String)
             End If
             If (Original_ReturnDate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
@@ -4788,22 +4958,22 @@ Namespace _borrowing_systemDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "users"
-            tableMapping.ColumnMappings.Add("StudentOrFacultyID", "StudentOrFacultyID")
-            tableMapping.ColumnMappings.Add("UserID", "UserID")
+            tableMapping.ColumnMappings.Add("UID", "UID")
+            tableMapping.ColumnMappings.Add("BorrowersID", "BorrowersID")
             tableMapping.ColumnMappings.Add("FullName", "FullName")
             tableMapping.ColumnMappings.Add("ContactNumber", "ContactNumber")
             tableMapping.ColumnMappings.Add("Type", "Type")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `users` WHERE (((? = 1 AND `StudentOrFacultyID` IS NULL) OR (`Student"& _ 
-                "OrFacultyID` = ?)) AND (`UserID` = ?) AND ((? = 1 AND `FullName` IS NULL) OR (`F"& _ 
-                "ullName` = ?)) AND ((? = 1 AND `ContactNumber` IS NULL) OR (`ContactNumber` = ?)"& _ 
-                ") AND ((? = 1 AND `Type` IS NULL) OR (`Type` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `users` WHERE (((? = 1 AND `UID` IS NULL) OR (`UID` = ?)) AND (`Borro"& _ 
+                "wersID` = ?) AND ((? = 1 AND `FullName` IS NULL) OR (`FullName` = ?)) AND ((? = "& _ 
+                "1 AND `ContactNumber` IS NULL) OR (`ContactNumber` = ?)) AND ((? = 1 AND `Type` "& _ 
+                "IS NULL) OR (`Type` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_UID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_FullName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FullName", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_FullName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FullName", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ContactNumber", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ContactNumber", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4812,28 +4982,28 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `users` (`StudentOrFacultyID`, `FullName`, `ContactNumber`, `Type`) V"& _ 
-                "ALUES (?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `users` (`BorrowersID`, `FullName`, `ContactNumber`, `Type`) VALUES ("& _ 
+                "?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FullName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FullName", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ContactNumber", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ContactNumber", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `users` SET `StudentOrFacultyID` = ?, `FullName` = ?, `ContactNumber` = ?,"& _ 
-                " `Type` = ? WHERE (((? = 1 AND `StudentOrFacultyID` IS NULL) OR (`StudentOrFacul"& _ 
-                "tyID` = ?)) AND (`UserID` = ?) AND ((? = 1 AND `FullName` IS NULL) OR (`FullName"& _ 
-                "` = ?)) AND ((? = 1 AND `ContactNumber` IS NULL) OR (`ContactNumber` = ?)) AND ("& _ 
-                "(? = 1 AND `Type` IS NULL) OR (`Type` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `users` SET `BorrowersID` = ?, `FullName` = ?, `ContactNumber` = ?, `Type`"& _ 
+                " = ? WHERE (((? = 1 AND `UID` IS NULL) OR (`UID` = ?)) AND (`BorrowersID` = ?) A"& _ 
+                "ND ((? = 1 AND `FullName` IS NULL) OR (`FullName` = ?)) AND ((? = 1 AND `Contact"& _ 
+                "Number` IS NULL) OR (`ContactNumber` = ?)) AND ((? = 1 AND `Type` IS NULL) OR (`"& _ 
+                "Type` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FullName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FullName", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ContactNumber", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ContactNumber", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Type", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_StudentOrFacultyID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "StudentOrFacultyID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_UID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UID", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BorrowersID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "BorrowersID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_FullName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FullName", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_FullName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FullName", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ContactNumber", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ContactNumber", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4855,7 +5025,7 @@ Namespace _borrowing_systemDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT StudentOrFacultyID, UserID, FullName, ContactNumber, Type FROM users"
+            Me._commandCollection(0).CommandText = "SELECT UID, BorrowersID, FullName, ContactNumber, Type FROM users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4863,7 +5033,7 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet.usersDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As _borrowing_systemDataSet1.usersDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -4876,9 +5046,9 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet.usersDataTable
+        Public Overloads Overridable Function GetData() As _borrowing_systemDataSet1.usersDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As _borrowing_systemDataSet.usersDataTable = New _borrowing_systemDataSet.usersDataTable()
+            Dim dataTable As _borrowing_systemDataSet1.usersDataTable = New _borrowing_systemDataSet1.usersDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -4886,14 +5056,14 @@ Namespace _borrowing_systemDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet.usersDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As _borrowing_systemDataSet1.usersDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As _borrowing_systemDataSet1) As Integer
             Return Me.Adapter.Update(dataSet, "users")
         End Function
         
@@ -4915,15 +5085,14 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_StudentOrFacultyID As String, ByVal Original_UserID As Integer, ByVal Original_FullName As String, ByVal Original_ContactNumber As String, ByVal Original_Type As String) As Integer
-            If (Original_StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
+        Public Overloads Overridable Function Delete(ByVal Original_UID As Integer, ByVal Original_BorrowersID As String, ByVal Original_FullName As String, ByVal Original_ContactNumber As String, ByVal Original_Type As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_UID,Integer)
+            If (Original_BorrowersID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_BorrowersID")
             Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_StudentOrFacultyID,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_BorrowersID,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_UserID,Integer)
             If (Original_FullName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
@@ -4964,11 +5133,11 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal StudentOrFacultyID As String, ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String) As Integer
-            If (StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+        Public Overloads Overridable Function Insert(ByVal BorrowersID As String, ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String) As Integer
+            If (BorrowersID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("BorrowersID")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(StudentOrFacultyID,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(BorrowersID,String)
             End If
             If (FullName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -5004,11 +5173,11 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal StudentOrFacultyID As String, ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String, ByVal Original_StudentOrFacultyID As String, ByVal Original_UserID As Integer, ByVal Original_FullName As String, ByVal Original_ContactNumber As String, ByVal Original_Type As String) As Integer
-            If (StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+        Public Overloads Overridable Function Update(ByVal BorrowersID As String, ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String, ByVal Original_UID As Integer, ByVal Original_BorrowersID As String, ByVal Original_FullName As String, ByVal Original_ContactNumber As String, ByVal Original_Type As String) As Integer
+            If (BorrowersID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("BorrowersID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(StudentOrFacultyID,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BorrowersID,String)
             End If
             If (FullName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -5025,14 +5194,13 @@ Namespace _borrowing_systemDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Type,String)
             End If
-            If (Original_StudentOrFacultyID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_UID,Integer)
+            If (Original_BorrowersID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_BorrowersID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_StudentOrFacultyID,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_BorrowersID,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_UserID,Integer)
             If (Original_FullName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
@@ -5068,6 +5236,14 @@ Namespace _borrowing_systemDataSetTableAdapters
                 End If
             End Try
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal FullName As String, ByVal ContactNumber As String, ByVal Type As String, ByVal Original_UID As Integer, ByVal Original_BorrowersID As String, ByVal Original_FullName As String, ByVal Original_ContactNumber As String, ByVal Original_Type As String) As Integer
+            Return Me.Update(Original_BorrowersID, FullName, ContactNumber, Type, Original_UID, Original_BorrowersID, Original_FullName, Original_ContactNumber, Original_Type)
+        End Function
     End Class
     
     '''<summary>
@@ -5085,11 +5261,11 @@ Namespace _borrowing_systemDataSetTableAdapters
         
         Private _bookTableAdapter As bookTableAdapter
         
-        Private _borrowed_booksTableAdapter As borrowed_booksTableAdapter
+        Private _borrowTableAdapter As borrowTableAdapter
         
-        Private _librarianTableAdapter As librarianTableAdapter
+        Private _loginTableAdapter As loginTableAdapter
         
-        Private _returned_booksTableAdapter As returned_booksTableAdapter
+        Private _returnTableAdapter As returnTableAdapter
         
         Private _usersTableAdapter As usersTableAdapter
         
@@ -5127,12 +5303,12 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property borrowed_booksTableAdapter() As borrowed_booksTableAdapter
+        Public Property borrowTableAdapter() As borrowTableAdapter
             Get
-                Return Me._borrowed_booksTableAdapter
+                Return Me._borrowTableAdapter
             End Get
             Set
-                Me._borrowed_booksTableAdapter = value
+                Me._borrowTableAdapter = value
             End Set
         End Property
         
@@ -5141,12 +5317,12 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property librarianTableAdapter() As librarianTableAdapter
+        Public Property loginTableAdapter() As loginTableAdapter
             Get
-                Return Me._librarianTableAdapter
+                Return Me._loginTableAdapter
             End Get
             Set
-                Me._librarianTableAdapter = value
+                Me._loginTableAdapter = value
             End Set
         End Property
         
@@ -5155,12 +5331,12 @@ Namespace _borrowing_systemDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property returned_booksTableAdapter() As returned_booksTableAdapter
+        Public Property returnTableAdapter() As returnTableAdapter
             Get
-                Return Me._returned_booksTableAdapter
+                Return Me._returnTableAdapter
             End Get
             Set
-                Me._returned_booksTableAdapter = value
+                Me._returnTableAdapter = value
             End Set
         End Property
         
@@ -5201,17 +5377,17 @@ Namespace _borrowing_systemDataSetTableAdapters
                             AndAlso (Not (Me._bookTableAdapter.Connection) Is Nothing)) Then
                     Return Me._bookTableAdapter.Connection
                 End If
-                If ((Not (Me._borrowed_booksTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._borrowed_booksTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._borrowed_booksTableAdapter.Connection
+                If ((Not (Me._borrowTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._borrowTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._borrowTableAdapter.Connection
                 End If
-                If ((Not (Me._librarianTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._librarianTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._librarianTableAdapter.Connection
+                If ((Not (Me._loginTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._loginTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._loginTableAdapter.Connection
                 End If
-                If ((Not (Me._returned_booksTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._returned_booksTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._returned_booksTableAdapter.Connection
+                If ((Not (Me._returnTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._returnTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._returnTableAdapter.Connection
                 End If
                 If ((Not (Me._usersTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._usersTableAdapter.Connection) Is Nothing)) Then
@@ -5233,13 +5409,13 @@ Namespace _borrowing_systemDataSetTableAdapters
                 If (Not (Me._bookTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._borrowed_booksTableAdapter) Is Nothing) Then
+                If (Not (Me._borrowTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._librarianTableAdapter) Is Nothing) Then
+                If (Not (Me._loginTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._returned_booksTableAdapter) Is Nothing) Then
+                If (Not (Me._returnTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._usersTableAdapter) Is Nothing) Then
@@ -5254,23 +5430,14 @@ Namespace _borrowing_systemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As _borrowing_systemDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As _borrowing_systemDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._bookTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._returnTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet._return.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._bookTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._returned_booksTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet._returned_books.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._returned_booksTableAdapter.Update(updatedRows))
+                    result = (result + Me._returnTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -5283,21 +5450,30 @@ Namespace _borrowing_systemDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._borrowed_booksTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet._borrowed_books.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._borrowTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.borrow.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._borrowed_booksTableAdapter.Update(updatedRows))
+                    result = (result + Me._borrowTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._librarianTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.librarian.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._bookTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._librarianTableAdapter.Update(updatedRows))
+                    result = (result + Me._bookTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._loginTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.login.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._loginTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -5309,21 +5485,13 @@ Namespace _borrowing_systemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As _borrowing_systemDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As _borrowing_systemDataSet1, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._bookTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._returnTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet._return.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._bookTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._returned_booksTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet._returned_books.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._returned_booksTableAdapter.Update(addedRows))
+                    result = (result + Me._returnTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -5335,19 +5503,27 @@ Namespace _borrowing_systemDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._borrowed_booksTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet._borrowed_books.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._borrowTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.borrow.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._borrowed_booksTableAdapter.Update(addedRows))
+                    result = (result + Me._borrowTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._librarianTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.librarian.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._bookTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._librarianTableAdapter.Update(addedRows))
+                    result = (result + Me._bookTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._loginTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.login.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._loginTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -5359,21 +5535,29 @@ Namespace _borrowing_systemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As _borrowing_systemDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As _borrowing_systemDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._librarianTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.librarian.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._loginTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.login.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._librarianTableAdapter.Update(deletedRows))
+                    result = (result + Me._loginTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._borrowed_booksTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet._borrowed_books.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._bookTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._borrowed_booksTableAdapter.Update(deletedRows))
+                    result = (result + Me._bookTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._borrowTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.borrow.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._borrowTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -5385,19 +5569,11 @@ Namespace _borrowing_systemDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._returned_booksTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet._returned_books.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._returnTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet._return.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._returned_booksTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._bookTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.book.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._bookTableAdapter.Update(deletedRows))
+                    result = (result + Me._returnTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -5435,7 +5611,7 @@ Namespace _borrowing_systemDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As _borrowing_systemDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As _borrowing_systemDataSet1) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
@@ -5447,18 +5623,18 @@ Namespace _borrowing_systemDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._borrowed_booksTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._borrowed_booksTableAdapter.Connection) = false)) Then
+            If ((Not (Me._borrowTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._borrowTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._librarianTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._librarianTableAdapter.Connection) = false)) Then
+            If ((Not (Me._loginTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._loginTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._returned_booksTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._returned_booksTableAdapter.Connection) = false)) Then
+            If ((Not (Me._returnTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._returnTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -5508,31 +5684,31 @@ Namespace _borrowing_systemDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._bookTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._borrowed_booksTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._borrowed_booksTableAdapter, Me._borrowed_booksTableAdapter.Connection)
-                    Me._borrowed_booksTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._borrowed_booksTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._borrowed_booksTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._borrowed_booksTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._borrowed_booksTableAdapter.Adapter)
+                If (Not (Me._borrowTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._borrowTableAdapter, Me._borrowTableAdapter.Connection)
+                    Me._borrowTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._borrowTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._borrowTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._borrowTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._borrowTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._librarianTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._librarianTableAdapter, Me._librarianTableAdapter.Connection)
-                    Me._librarianTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._librarianTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._librarianTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._librarianTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._librarianTableAdapter.Adapter)
+                If (Not (Me._loginTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._loginTableAdapter, Me._loginTableAdapter.Connection)
+                    Me._loginTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._loginTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._loginTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._loginTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._loginTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._returned_booksTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._returned_booksTableAdapter, Me._returned_booksTableAdapter.Connection)
-                    Me._returned_booksTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
-                    Me._returned_booksTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
-                    If Me._returned_booksTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._returned_booksTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._returned_booksTableAdapter.Adapter)
+                If (Not (Me._returnTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._returnTableAdapter, Me._returnTableAdapter.Connection)
+                    Me._returnTableAdapter.Connection = CType(workConnection,Global.System.Data.OleDb.OleDbConnection)
+                    Me._returnTableAdapter.Transaction = CType(workTransaction,Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._returnTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._returnTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._returnTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._usersTableAdapter) Is Nothing) Then
@@ -5608,17 +5784,17 @@ Namespace _borrowing_systemDataSetTableAdapters
                     Me._bookTableAdapter.Connection = CType(revertConnections(Me._bookTableAdapter),Global.System.Data.OleDb.OleDbConnection)
                     Me._bookTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._borrowed_booksTableAdapter) Is Nothing) Then
-                    Me._borrowed_booksTableAdapter.Connection = CType(revertConnections(Me._borrowed_booksTableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._borrowed_booksTableAdapter.Transaction = Nothing
+                If (Not (Me._borrowTableAdapter) Is Nothing) Then
+                    Me._borrowTableAdapter.Connection = CType(revertConnections(Me._borrowTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._borrowTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._librarianTableAdapter) Is Nothing) Then
-                    Me._librarianTableAdapter.Connection = CType(revertConnections(Me._librarianTableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._librarianTableAdapter.Transaction = Nothing
+                If (Not (Me._loginTableAdapter) Is Nothing) Then
+                    Me._loginTableAdapter.Connection = CType(revertConnections(Me._loginTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._loginTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._returned_booksTableAdapter) Is Nothing) Then
-                    Me._returned_booksTableAdapter.Connection = CType(revertConnections(Me._returned_booksTableAdapter),Global.System.Data.OleDb.OleDbConnection)
-                    Me._returned_booksTableAdapter.Transaction = Nothing
+                If (Not (Me._returnTableAdapter) Is Nothing) Then
+                    Me._returnTableAdapter.Connection = CType(revertConnections(Me._returnTableAdapter),Global.System.Data.OleDb.OleDbConnection)
+                    Me._returnTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._usersTableAdapter) Is Nothing) Then
                     Me._usersTableAdapter.Connection = CType(revertConnections(Me._usersTableAdapter),Global.System.Data.OleDb.OleDbConnection)
