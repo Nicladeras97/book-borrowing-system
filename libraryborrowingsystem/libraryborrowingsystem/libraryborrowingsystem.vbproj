@@ -108,6 +108,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="_borrowing_systemDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_borrowing_systemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_borrowing_systemDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,6 +149,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="_borrowing_systemDataSet.xsc">
+      <DependentUpon>_borrowing_systemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_borrowing_systemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_borrowing_systemDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_borrowing_systemDataSet.xss">
+      <DependentUpon>_borrowing_systemDataSet.xsd</DependentUpon>
     </None>
     <None Include="_borrowing_systemDataSet1.xsc">
       <DependentUpon>_borrowing_systemDataSet1.xsd</DependentUpon>
