@@ -54,6 +54,7 @@ Partial Class Menu
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(998, 62)
@@ -81,9 +82,9 @@ Partial Class Menu
         Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(958, 19)
+        Me.Button2.Location = New System.Drawing.Point(958, 22)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(20, 20)
+        Me.Button2.Size = New System.Drawing.Size(15, 15)
         Me.Button2.TabIndex = 5
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -96,19 +97,19 @@ Partial Class Menu
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(925, 19)
+        Me.Button1.Location = New System.Drawing.Point(927, 22)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(20, 20)
+        Me.Button1.Size = New System.Drawing.Size(15, 15)
         Me.Button1.TabIndex = 4
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(52, 20)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(56, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(178, 20)
+        Me.Label1.Size = New System.Drawing.Size(150, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Book Borrowing System"
         '
@@ -124,23 +125,23 @@ Partial Class Menu
         '
         'PictureBox2
         '
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.image
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.Group_43
         Me.PictureBox2.InitialImage = Nothing
         Me.PictureBox2.Location = New System.Drawing.Point(69, 95)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(62, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(41, 50)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(45, 50)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 24)
+        Me.Label2.Size = New System.Drawing.Size(100, 20)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Borrow Book"
         '
@@ -156,32 +157,32 @@ Partial Class Menu
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.image
-        Me.PictureBox3.Location = New System.Drawing.Point(69, 95)
+        Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.Group_45
+        Me.PictureBox3.Location = New System.Drawing.Point(81, 99)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(62, 50)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 1
         Me.PictureBox3.TabStop = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(44, 50)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(49, 50)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(114, 24)
+        Me.Label3.Size = New System.Drawing.Size(99, 20)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Return Book"
         '
         'Label4
         '
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(41, 41)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(33, 50)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(122, 51)
+        Me.Label4.Size = New System.Drawing.Size(137, 20)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Book List and Records"
+        Me.Label4.Text = "List and Records"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel4
@@ -196,11 +197,11 @@ Partial Class Menu
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.image
-        Me.PictureBox4.Location = New System.Drawing.Point(70, 95)
+        Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.Group
+        Me.PictureBox4.Location = New System.Drawing.Point(81, 99)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(62, 50)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox4.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 1
         Me.PictureBox4.TabStop = False
         '
