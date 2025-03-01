@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\libraryborrowingsystem",
+    "\\libraryborrowingsystem\\libraryborrowingsystem"
   ],
-  "SelectedNode": "\\libraryborrowingsystem.sln",
+  "SelectedNode": "\\libraryborrowingsystem\\libraryborrowingsystem\\Form1.vb",
   "PreviewInSolutionExplorer": false
 }

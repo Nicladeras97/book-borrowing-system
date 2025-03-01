@@ -1,4 +1,27 @@
-﻿Public Class Form2
+﻿Imports System.Data.OleDb
+Public Class Form2
+    Dim connString As String = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\borrowing-system.accdb")
+
+    Private bookID As String
+    Private bookTitle As String
+    Private bookImage As String
+    Private bookStatus As String
+
+    Public Sub New(id As String, title As String, image As String, status As String)
+        InitializeComponent()
+        bookID = id
+        bookTitle = title
+        bookImage = image
+        bookStatus = status
+    End Sub
+
+    Public Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox2.ImageLocation = bookImage
+        Label2.Text = bookTitle
+        Label9.Text = bookStatus
+        Label10.Text = bookID
+    End Sub
+
     Private Sub DateTimePicker1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DateTimePicker1.ValueChanged
         DateTimePicker1.Format = DateTimePickerFormat.Custom
         DateTimePicker1.CustomFormat = "MMMM dd, yyyy"

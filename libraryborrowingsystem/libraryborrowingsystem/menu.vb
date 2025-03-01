@@ -1,7 +1,6 @@
-﻿Imports System.Drawing.Drawing2D
+﻿
 
 Public Class Menu
-
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim logout As New Login()
         logout.Show()
@@ -12,5 +11,9 @@ Public Class Menu
         Dim borrow As New Form1()
         borrow.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class
