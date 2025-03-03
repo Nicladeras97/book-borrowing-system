@@ -1,4 +1,4 @@
-﻿Public Class Form3
+﻿Public Class ReturnForm
     Dim connString As String = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\borrowing-system.accdb")
 
     Private bookID As String
@@ -12,9 +12,15 @@
         bookImage = image
     End Sub
 
-    Public Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ReturnForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2.ImageLocation = bookImage
         Label2.Text = bookTitle
         Label4.Text = bookID
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim form As New DisplayBorrowed()
+        form.Show()
+        Me.Close()
     End Sub
 End Class

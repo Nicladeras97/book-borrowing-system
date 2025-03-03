@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class Form2
+Public Class BorrowForm
     Dim connString As String = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\borrowing-system.accdb")
 
     Private bookID As String
@@ -15,7 +15,7 @@ Public Class Form2
         bookStatus = status
     End Sub
 
-    Public Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub BorrowForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2.ImageLocation = bookImage
         Label2.Text = bookTitle
         Label9.Text = bookStatus
@@ -33,8 +33,8 @@ Public Class Form2
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Dim form As New Form1()
+        Dim form As New DisplayAvailable()
         form.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class

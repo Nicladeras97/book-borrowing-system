@@ -3,18 +3,6 @@
 Public Class Login
     Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\borrowing-system.accdb"
 
-    Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Using conn As New OleDbConnection(connString)
-            Try
-                conn.Open()
-                'MessageBox.Show("Connection to database is successful")
-                conn.Close()
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            End Try
-        End Using
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim username As String = TextBox1.Text
         Dim password As String = TextBox2.Text
@@ -32,8 +20,8 @@ Public Class Login
                     Dim userCount As Integer = Convert.ToInt32(cmd.ExecuteScalar())
 
                     If userCount > 0 Then
-                        MessageBox.Show("Login successful! Welcome!", "Success",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'MessageBox.Show("Login successful!", "Success",
+                        '                MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Me.Hide()
                         Dim menuForm As New Menu()
                         menuForm.Show()

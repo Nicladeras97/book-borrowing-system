@@ -190,8 +190,9 @@ Public Class Form1
             End Try
         End Using
 
-        Dim borrowForm As New Form2(bookID, bookTitle, bookImage, bookStatus)
-        borrowForm.ShowDialog()
+        Dim borrowForm As New BorrowForm(bookID, bookTitle, bookImage, bookStatus)
+        borrowForm.Show()
+        Me.Close()
     End Sub
 
     Private Sub ReturnBook(sender As Object, e As EventArgs)
@@ -219,7 +220,8 @@ Public Class Form1
             End Try
         End Using
 
-        Dim returnForm As New Form3(bookID, bookTitle, bookImage)
-        returnForm.ShowDialog()
+        Dim returnForm As New ReturnForm(bookID, bookTitle, bookImage)
+        returnForm.Show()
+        Me.Close()
     End Sub
 End Class
