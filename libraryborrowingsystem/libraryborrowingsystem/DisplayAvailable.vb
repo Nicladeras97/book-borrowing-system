@@ -115,7 +115,7 @@ Public Class DisplayAvailable
         Dim bookStatus As String = ""
 
         Using conn As New OleDbConnection(connString)
-            Dim query As String = "SELECT Title, Image, Status FROM displayBooks WHERE BookID = @bookID"
+            Dim query As String = "SELECT [Title], Image, Status FROM displayBooks WHERE BookID = @bookID"
             Dim cmd As New OleDbCommand(query, conn)
             cmd.Parameters.AddWithValue("@bookID", bookID)
 
@@ -126,6 +126,7 @@ Public Class DisplayAvailable
                     bookTitle = reader("Title").ToString()
                     bookImage = reader("Image").ToString()
                     bookStatus = reader("Status").ToString()
+
                 End If
                 reader.Close()
             Catch ex As Exception
