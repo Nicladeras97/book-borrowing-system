@@ -238,7 +238,7 @@ Partial Class ReturnForm
         Me.Label4.TabIndex = 31
         Me.Label4.Text = "0001"
         '
-        'Form3
+        'ReturnForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -252,7 +252,7 @@ Partial Class ReturnForm
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Form3"
+        Me.Name = "ReturnForm"
         Me.Text = "Form3"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
