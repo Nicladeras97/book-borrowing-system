@@ -80,10 +80,10 @@ Partial Class DisplayBorrowed
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(56, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(150, 16)
+        Me.Label1.Size = New System.Drawing.Size(147, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Book Borrowing System"
         '
@@ -107,44 +107,47 @@ Partial Class DisplayBorrowed
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(813, 95)
+        Me.Button1.Location = New System.Drawing.Point(153, 98)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(20, 20)
+        Me.Button1.Padding = New System.Windows.Forms.Padding(2)
+        Me.Button1.Size = New System.Drawing.Size(15, 15)
         Me.Button1.TabIndex = 18
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(56, 177)
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(62, 152)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(149, 24)
+        Me.Label2.Size = New System.Drawing.Size(102, 16)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Borrowed Books"
         '
         'TextBox1
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(140, 95)
+        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(172, 95)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(663, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(677, 22)
         Me.TextBox1.TabIndex = 16
         Me.TextBox1.Text = " Search"
         '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(60, 220)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(60, 178)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(10)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(882, 305)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(882, 323)
         Me.FlowLayoutPanel1.TabIndex = 19
         '
         'DisplayBorrowed
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(998, 560)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
